@@ -14,9 +14,14 @@ export default function App() {
 
   return (
     <main>
-      <Start 
-        handleStart={handleStartQuiz}
-      />
+      {
+        gameStart ?
+          <QuestionsPage
+          /> :
+          <Start 
+            handleStart={handleStartQuiz}
+          />
+      }
       
    
    

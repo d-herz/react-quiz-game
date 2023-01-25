@@ -8,7 +8,7 @@ function Start(props) {
   }
 
   return (
-    <div className="start--main" style={styles}>
+    <section className="start--main" style={styles}>
 
       <h1 className="start--title">
         Quizzical
@@ -21,7 +21,7 @@ function Start(props) {
         Start Quiz
       </button>
 
-    </div>
+    </section>
   )
 }
 

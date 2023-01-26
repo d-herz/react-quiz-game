@@ -13,8 +13,9 @@ function QuestionsPage(props) {
 
   //Fetch from trivia API w/ useEffect
   //using base64 encoding for now and atob() in Question card map
+  //could utilize different types T/F or multi choice questions, maybe set url to a variable and have a button press dictate
   React.useEffect(() => {
-    fetch(`https://opentdb.com/api.php?amount=5&encode=base64`)
+    fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
       .then(res => res.json())
       .then(data => {
         return setQuestions(data.results)
@@ -40,19 +41,26 @@ function QuestionsPage(props) {
   })
 
   return (
-    <section className="question--main">
-      <div className="question--container">
-        {questionCard}
-      </div>
+    <>
+      <nav className='navbar'>
+        <h2 className="question--header">
+          Quizzical!
+        </h2>
+      </nav>
+      <section className="question--main">
+        <div className="question--container">
+          {questionCard}
+        </div>
 
-      <button
-        className="check-ans-btn"
-        onClick={checkAns}
-      >
-        Check answers
-      </button>
+        <button
+          className="btn btn--check--ans"
+          onClick={checkAns}
+        >
+          Commit Answers
+        </button>
 
-    </section>
+      </section>
+    </>
   )
 }
 

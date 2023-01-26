@@ -10,9 +10,12 @@ function Question({ask, ans}) {
         {ask}
       </h2>
       <div className="question--answers">
-        <h4 className="question--answer--text">
+
+        {/* <h4 className="question--answer--text">
           {ans}
-        </h4>
+        </h4> */}
+        <button className='btn btn--ans'>TRUE</button>
+        <button className='btn btn--ans'>FALSE</button>
       </div>
     </div>
 

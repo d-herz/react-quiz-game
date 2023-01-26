@@ -1,13 +1,11 @@
 import React from 'react'
 import Question from './Question'
+import Header from "./Header"
+import Footer from "./Footer"
 import { nanoid } from "nanoid"
 
 
 function QuestionsPage(props) {
-  //bring in data and assign it to array/object
-  //use the object to map over and create each "Question" component and pass in props
-
-  let questionArr = ["Does this work?", "How about dis?", "How bow dah?", "Wowza"];
 
   const [questions, setQuestions] = React.useState([])
 
@@ -29,7 +27,7 @@ function QuestionsPage(props) {
   }
 
   //Mapping Data and creationg each question card
-  //bring in nanoID for key
+  //nanoID for key
   const questionCard = questions.map((questionObj, ind) => {
     return (
       <Question
@@ -42,11 +40,8 @@ function QuestionsPage(props) {
 
   return (
     <>
-      <nav className='navbar'>
-        <h2 className="question--header">
-          Quizzical!
-        </h2>
-      </nav>
+      <Header/>
+
       <section className="question--main">
         <div className="question--container">
           {questionCard}
@@ -60,6 +55,7 @@ function QuestionsPage(props) {
         </button>
 
       </section>
+      <Footer/>
     </>
   )
 }

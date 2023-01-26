@@ -12,7 +12,8 @@ body {
   align-items: center;
   justify-content: center; */
   font-family: 'Karla', sans-serif;
-  height: 100vh;
+  line-height: 1.3;
+  min-height: 100vh;
   margin: 0;
   /* padding: 20px; */
 }
@@ -28,12 +29,12 @@ body {
 /* Start Page */
 .start--main {
   display: flex;
-  height: 100vh;
+  min-height: 85vh;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   padding: 2.5rem;
-  margin-top: 10%;
+  margin-top: 5vh;
 }
 
 .start--quiz--container {
@@ -53,7 +54,7 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .question--container {
@@ -85,6 +86,13 @@ body {
 
 }
 
+.footer--main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Buttons */
 .btn {
   /* height: 50px; */
@@ -97,6 +105,8 @@ body {
   cursor: pointer;
   font-size: 1.25rem;
   font-weight: 400;
+  letter-spacing: .2rem;
+  
   /* font-family: 'Karla', sans-serif; */
   font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 1rem;
@@ -138,69 +148,3 @@ body {
 
 } */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CSS */
-.button-15 {
-  background-image: linear-gradient(#42A1EC, #0070C9);
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 400;
-  letter-spacing: -.022em;
-  line-height: 1.47059;
-  min-width: 30px;
-  overflow: visible;
-  padding: 4px 15px;
-  text-align: center;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-}
-
-.button-15:disabled {
-  cursor: default;
-  opacity: .3;
-}
-
-.button-15:hover {
-  background-image: linear-gradient(#51A9EE, #147BCD);
-  border-color: #1482D0;
-  text-decoration: none;
-}
-
-.button-15:active {
-  background-image: linear-gradient(#3D94D9, #0067B9);
-  border-color: #006DBC;
-  outline: none;
-}
-
-.button-15:focus {
-  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
-  outline: none;
-}

@@ -41,6 +41,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.question--text{
+  font-size: 1rem;
+}
 
 .check-ans-btn{
   width: 150px;

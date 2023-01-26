@@ -10,7 +10,7 @@ function Question({ask, ans}) {
         {ask}
       </h2>
       <div className="question--answers">
-        <h4 className="question--answert--text">
+        <h4 className="question--answer--text">
           {ans}
         </h4>
       </div>

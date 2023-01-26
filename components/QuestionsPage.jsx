@@ -9,7 +9,18 @@ function QuestionsPage(props) {
 
   let questionArr = ["Does this work?", "How about dis?", "How bow dah?", "Wowza"];
 
+  const [questions, setQuestions] = React.useState([])
 
+  //Fetch from trivia API w/ useEffect
+  //using base64 encoding for now and atob() in Question card map
+  React.useEffect(() => {
+    fetch(`https://opentdb.com/api.php?amount=5&encode=base64`)
+      .then(res => res.json())
+      .then(data => {
+        return setQuestions(data.results)
+      })
+  }, [])
+  console.log(questions)
 
   //Check Answer on button click
   function checkAns() {
@@ -18,11 +29,11 @@ function QuestionsPage(props) {
 
   //Mapping Data and creationg each question card
   //bring in nanoID for key
-  const questionCard = questionArr.map((question, ind) => {
+  const questionCard = questions.map((questionObj, ind) => {
     return (
       <Question
         key={nanoid()}
-        ask={question}
+        ask={atob(questionObj.question)}
         ans={ind}
       />
     )

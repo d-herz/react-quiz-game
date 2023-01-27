@@ -22,16 +22,6 @@ export default function App() {
   )
   console.log(questions)
 
-  //decoding incoming data and pushing to new array
-  // let sanitizedQuestionArr = questions.map(obj => {
-  //   return {
-  //     id: nanoid(),
-  //     question: atob(obj.question),
-  //     answer: atob(obj.correct_answer),
-  //   }
-  // })
-  // console.log(sanitizedQuestionArr)
-
 
   function handleStartQuiz() {
     setGameStart(!gameStart)

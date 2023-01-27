@@ -6,13 +6,15 @@ import { nanoid } from "nanoid"
 
 //questions props is trivia state array from <App> fetch 
 function QuestionsPage({ questions }) {
-
+  //State for selecting answers
+  const [selected, setSelected] = React.useState(false)
+  
   //Check Answer on button click
   function checkAns() {
     console.log("Answers Checked")
   }
 
-  //  decoding incoming data and pushing to new array
+  //Decoding incoming data and pushing to new array of objects
   let sanitizedQuestionArr = questions.map(obj => {
     return {
       id: nanoid(),
@@ -22,6 +24,10 @@ function QuestionsPage({ questions }) {
   })
   console.log(sanitizedQuestionArr)
   
+  const btnStyles = {
+    backgroundColor: selected ? "black" : "white"
+  }
+
 
   //Mapping Data and creating each question card
   //nanoID for key
@@ -32,6 +38,8 @@ function QuestionsPage({ questions }) {
         id={questionObj.id}
         ask={questionObj.question}
         ans={questionObj.answer}
+        btnStyles={btnStyles}
+        selected={selected}
       />
     )
   })

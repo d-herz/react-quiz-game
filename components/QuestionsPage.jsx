@@ -5,42 +5,30 @@ import Footer from "./Footer"
 import { nanoid } from "nanoid"
 
 //questions props is trivia state array from <App> fetch 
-function QuestionsPage({ questions }) {
-  //State for selecting answers
-  const [selected, setSelected] = React.useState(false)
-  
+function QuestionsPage({ questions, answerTrue, answerFalse }) {
+
 
   //Check Answer on button click
   function checkAns() {
     console.log("Answers Checked")
   }
 
-  //Decoding incoming data and pushing to new array of objects
-  // let sanitizedQuestionArr = questions.map(obj => {
-  //   return {
-  //     id: nanoid(),
-  //     question: atob(obj.question),
-  //     answer: atob(obj.correct_answer),
-  //   }
-  // })
-  // console.log(sanitizedQuestionArr)
-  
 
+  // function answerTrue(event, id) {
+  //   console.log("True")
+  //   console.log(id)
+  //   console.log(selected)
+  // }
 
-  function answerTrue(event, id) {
-    console.log("True")
-    console.log(id)
-    console.log(selected)
-  }
-  function answerFalse(event, id) {
-    console.log("False")
-    console.log(id)
-    console.log(selected)
+  // function answerFalse(event, id) {
+  //   console.log("False")
+  //   console.log(id)
+  //   console.log(selected)
 
-  }
+  // }
 
   const btnStyles = {
-    backgroundColor: selected ? "black" : "white"
+    // backgroundColor: selected ? "black" : "white"
   }
 
 
@@ -56,7 +44,6 @@ function QuestionsPage({ questions }) {
         toggleTrue={answerTrue}
         toggleFalse={answerFalse}
         btnStyles={btnStyles}
-        selected={selected}
       />
     )
   })

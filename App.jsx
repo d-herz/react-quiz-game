@@ -7,7 +7,7 @@ import QuestionsPage from "./components/QuestionsPage";
 
 export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
-  
+
   //Populate initial questions array with 5 easy boolean questions from game category (15)
   //base64 encoding and atob() called in question
   //Considering a variable for category/difficulty change to be inserted into url strin
@@ -23,16 +23,46 @@ export default function App() {
           id: nanoid(),
           question: atob(obj.question),
           answer: atob(obj.correct_answer),
+          isSelected: false,
         }
       })
-      
+
       setQuestions(cleanedData)
     }
     getQuestions()
-    
   }, [])
-  
+
   console.log(questions)
+
+
+  //button click handlers on question cards to be passed down to question.jsx
+  function answerTrue(event, id) {
+    setQuestions(prevQuestions => {
+      return prevQuestions.map((ques) => {
+        return ques.id === id ?
+          { ...ques, isSelected: "True" } :
+          ques
+      })
+    })
+    console.log("True")
+    console.log(id)
+    console.log(questions)
+  }
+
+  function answerFalse(event, id) {
+    setQuestions(prevQuestions => {
+      return prevQuestions.map((ques) => {
+        return ques.id === id ?
+          { ...ques, isSelected: "False" } :
+          ques
+      })
+    })
+    console.log("False")
+    console.log(id)
+    console.log(questions)
+  }
+
+
 
   function handleStartQuiz() {
     setGameStart(!gameStart)
@@ -45,14 +75,16 @@ export default function App() {
         gameStart ?
           <QuestionsPage
             questions={questions}
+            answerTrue={answerTrue}
+            answerFalse={answerFalse}
           /> :
-          <Start 
+          <Start
             handleStart={handleStartQuiz}
           />
       }
-      
-      
-   
+
+
+
     </main>
   )
 }

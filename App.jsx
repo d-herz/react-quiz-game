@@ -7,6 +7,21 @@ import QuestionsPage from "./components/QuestionsPage";
 export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
   
+  //Populate initial questions array with 5 easy boolean questions from game category (15)
+  const [questions, setQuestions] = React.useState(
+
+    React.useEffect(() => {
+      fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
+        .then(res => res.json())
+        .then(data => {
+          return setQuestions(data.results)
+        })
+    }, [])
+
+  )
+
+
+  console.log(questions)
 
   function handleStartQuiz() {
     setGameStart(!gameStart)
@@ -19,6 +34,7 @@ export default function App() {
       {
         gameStart ?
           <QuestionsPage
+            questions={questions}
           /> :
           <Start 
             handleStart={handleStartQuiz}

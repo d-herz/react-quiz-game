@@ -8,6 +8,8 @@ export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
   
   //Populate initial questions array with 5 easy boolean questions from game category (15)
+  //base64 encoding and atob() called in question
+  //Considering a variable for category/difficulty change to be inserted into url strin
   const [questions, setQuestions] = React.useState(
 
     React.useEffect(() => {
@@ -17,15 +19,22 @@ export default function App() {
           return setQuestions(data.results)
         })
     }, [])
-
   )
-
-
   console.log(questions)
+
+  //decoding incoming data and pushing to new array
+  // let sanitizedQuestionArr = questions.map(obj => {
+  //   return {
+  //     id: nanoid(),
+  //     question: atob(obj.question),
+  //     answer: atob(obj.correct_answer),
+  //   }
+  // })
+  // console.log(sanitizedQuestionArr)
+
 
   function handleStartQuiz() {
     setGameStart(!gameStart)
-    // console.log(`Game Start: ${gameStart}`)
   }
   console.log(`Game Start Status:${gameStart}`)
 

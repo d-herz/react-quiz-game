@@ -4,36 +4,34 @@ import Header from "./Header"
 import Footer from "./Footer"
 import { nanoid } from "nanoid"
 
-
+//questions props is trivia state array from <App> fetch 
 function QuestionsPage({ questions }) {
-
-  // const [questions, setQuestions] = React.useState([])
-
-  //Fetch from trivia API w/ useEffect
-  //using base64 encoding for now and atob() in Question card map
-  //could utilize different types T/F or multi choice questions, maybe set url to a variable and have a button press dictate
-  // React.useEffect(() => {
-  //   fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       return setQuestions(data.results)
-  //     })
-  // }, [])
-  console.log(questions)
 
   //Check Answer on button click
   function checkAns() {
     console.log("Answers Checked")
   }
 
-  //Mapping Data and creationg each question card
+  //  decoding incoming data and pushing to new array
+  let sanitizedQuestionArr = questions.map(obj => {
+    return {
+      id: nanoid(),
+      question: atob(obj.question),
+      answer: atob(obj.correct_answer),
+    }
+  })
+  console.log(sanitizedQuestionArr)
+  
+
+  //Mapping Data and creating each question card
   //nanoID for key
-  const questionCard = questions.map((questionObj, ind) => {
+  const questionCard = sanitizedQuestionArr.map((questionObj, ind) => {
     return (
       <Question
         key={nanoid()}
-        ask={atob(questionObj.question)}
-        ans={ind}
+        id={questionObj.id}
+        ask={questionObj.question}
+        ans={questionObj.answer}
       />
     )
   })

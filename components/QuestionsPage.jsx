@@ -9,21 +9,36 @@ function QuestionsPage({ questions }) {
   //State for selecting answers
   const [selected, setSelected] = React.useState(false)
   
+
   //Check Answer on button click
   function checkAns() {
     console.log("Answers Checked")
   }
 
   //Decoding incoming data and pushing to new array of objects
-  let sanitizedQuestionArr = questions.map(obj => {
-    return {
-      id: nanoid(),
-      question: atob(obj.question),
-      answer: atob(obj.correct_answer),
-    }
-  })
-  console.log(sanitizedQuestionArr)
+  // let sanitizedQuestionArr = questions.map(obj => {
+  //   return {
+  //     id: nanoid(),
+  //     question: atob(obj.question),
+  //     answer: atob(obj.correct_answer),
+  //   }
+  // })
+  // console.log(sanitizedQuestionArr)
   
+
+
+  function answerTrue(event, id) {
+    console.log("True")
+    console.log(id)
+    console.log(selected)
+  }
+  function answerFalse(event, id) {
+    console.log("False")
+    console.log(id)
+    console.log(selected)
+
+  }
+
   const btnStyles = {
     backgroundColor: selected ? "black" : "white"
   }
@@ -31,13 +46,15 @@ function QuestionsPage({ questions }) {
 
   //Mapping Data and creating each question card
   //nanoID for key
-  const questionCard = sanitizedQuestionArr.map((questionObj, ind) => {
+  const questionCard = questions.map((questionObj, ind) => {
     return (
       <Question
         key={nanoid()}
         id={questionObj.id}
         ask={questionObj.question}
         ans={questionObj.answer}
+        toggleTrue={answerTrue}
+        toggleFalse={answerFalse}
         btnStyles={btnStyles}
         selected={selected}
       />

@@ -5,21 +5,21 @@ function Question(props) {
   //might have to elevate these button handlers
   //Idea: set a "choice/selected" property on each answer as a boolean that is switched based on selected
   //Buttons need to hold a different style on click as well
-  function answerTrue(event, id){
-    if(props.ans === "True"){
-      console.log("True, correct!", id)
-      console.log(event.target)
-    }else{
-      console.log("Not true, wrong!")
-    }
-  }
-  function answerFalse(event, id){
-    if(props.ans === "False"){
-      console.log("False, correct!", id)
-    }else{
-      console.log("Not false, wrong!")
-    }
-  }
+  // function answerTrue(event, id){
+  //   if(props.ans === "True"){
+  //     console.log("True, correct!", id)
+  //     console.log(event.target)
+  //   }else{
+  //     console.log("Not true, wrong!")
+  //   }
+  // }
+  // function answerFalse(event, id){
+  //   if(props.ans === "False"){
+  //     console.log("False, correct!", id)
+  //   }else{
+  //     console.log("Not false, wrong!")
+  //   }
+  // }
   
   return (
     
@@ -34,13 +34,13 @@ function Question(props) {
         </h4> */}
         <button style={props.btnStyles}
         className='btn btn--ans'
-        onClick={(event) => answerTrue(event, props.id)}
+        onClick={(event) => props.toggleTrue(event, props.id)}
         >
           TRUE
         </button>
         <button style={props.btnStyles}
         className='btn btn--ans'
-        onClick={(event) => answerFalse(event, props.id)}
+        onClick={(event) => props.toggleFalse(event, props.id)}
         >
           FALSE
         </button>

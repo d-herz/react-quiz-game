@@ -62,8 +62,6 @@ export default function App() {
     console.log(questions)
   }
 
-
-
   function handleStartQuiz() {
     setGameStart(!gameStart)
   }

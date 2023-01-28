@@ -20,7 +20,13 @@ function Question(props) {
   //     console.log("Not false, wrong!")
   //   }
   // }
-  
+
+  const btnStyles = {
+    // backgroundImage: props.playerChoice ? "none" :
+    //   "linear-gradient(#42A1EC, #0070C9)",
+      
+  }
+
   return (
     
     <div className="question--card">
@@ -32,15 +38,15 @@ function Question(props) {
         {/* <h4 className="question--answer--text">
           {ans}
         </h4> */}
-        <button style={props.btnStyles}
+        <button type='button' style={btnStyles}
         className='btn btn--ans'
-        onClick={(event) => props.toggleTrue(event, props.id)}
+        onClick={(event) => props.answerTrue(event, props.id)}
         >
           TRUE
         </button>
-        <button style={props.btnStyles}
+        <button type='button' style={btnStyles}
         className='btn btn--ans'
-        onClick={(event) => props.toggleFalse(event, props.id)}
+        onClick={(event) => props.answerFalse(event, props.id)}
         >
           FALSE
         </button>

@@ -14,22 +14,7 @@ function QuestionsPage({ questions, answerTrue, answerFalse }) {
   }
 
 
-  // function answerTrue(event, id) {
-  //   console.log("True")
-  //   console.log(id)
-  //   console.log(selected)
-  // }
-
-  // function answerFalse(event, id) {
-  //   console.log("False")
-  //   console.log(id)
-  //   console.log(selected)
-
-  // }
-
-  const btnStyles = {
-    // backgroundColor: selected ? "black" : "white"
-  }
+ 
 
 
   //Mapping Data and creating each question card
@@ -41,9 +26,10 @@ function QuestionsPage({ questions, answerTrue, answerFalse }) {
         id={questionObj.id}
         ask={questionObj.question}
         ans={questionObj.answer}
-        toggleTrue={answerTrue}
-        toggleFalse={answerFalse}
-        btnStyles={btnStyles}
+        playerChoice={questionObj.playerChoice}
+        answerTrue={answerTrue}
+        answerFalse={answerFalse}
+        // btnStyles={btnStyles}
       />
     )
   })

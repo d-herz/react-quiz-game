@@ -9,7 +9,6 @@ export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
 
   //Populate initial questions array with 5 easy boolean questions from game category (15)
-  //base64 encoding and atob() called in question
   //Considering a variable for category/difficulty change to be inserted into url strin
   const [questions, setQuestions] = React.useState([])
 
@@ -23,7 +22,7 @@ export default function App() {
           id: nanoid(),
           question: atob(obj.question),
           answer: atob(obj.correct_answer),
-          isSelected: false,
+          playerChoice: "",
         }
       })
 
@@ -35,12 +34,12 @@ export default function App() {
   console.log(questions)
 
 
-  //button click handlers on question cards to be passed down to question.jsx
+  //button click handlers on question cards to be passed down to question.jsx. This updates the questions state property "playerChoice"
   function answerTrue(event, id) {
     setQuestions(prevQuestions => {
       return prevQuestions.map((ques) => {
         return ques.id === id ?
-          { ...ques, isSelected: "True" } :
+          { ...ques, playerChoice: "True" } :
           ques
       })
     })
@@ -50,10 +49,12 @@ export default function App() {
   }
 
   function answerFalse(event, id) {
+    event.stopPropagation()
+    event.preventDefault()
     setQuestions(prevQuestions => {
       return prevQuestions.map((ques) => {
         return ques.id === id ?
-          { ...ques, isSelected: "False" } :
+          { ...ques, playerChoice: "False" } :
           ques
       })
     })

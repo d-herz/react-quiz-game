@@ -33,6 +33,11 @@ export default function App() {
 
   console.log(questions)
 
+  //Start Quiz Function
+  function handleStartQuiz() {
+    setGameStart(!gameStart)
+  }
+  // console.log(`Game Start Status:${gameStart}`)
 
   //button click handlers on question cards to be passed down to question.jsx. This updates the questions state property "playerChoice"
   function answerTrue(event, id) {
@@ -63,10 +68,10 @@ export default function App() {
     console.log(questions)
   }
 
-  function handleStartQuiz() {
-    setGameStart(!gameStart)
+  //Check Answer on button click
+  function checkAns() {
+    console.log("Answers Checked")
   }
-  // console.log(`Game Start Status:${gameStart}`)
 
   return (
     <main>
@@ -76,6 +81,7 @@ export default function App() {
             questions={questions}
             answerTrue={answerTrue}
             answerFalse={answerFalse}
+            checkAns={checkAns}
           /> :
           <Start
             handleStart={handleStartQuiz}

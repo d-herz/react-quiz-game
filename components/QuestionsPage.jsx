@@ -8,8 +8,6 @@ import { nanoid } from "nanoid"
 function QuestionsPage({ questions, answerTrue, answerFalse, checkAns }) {
 
 
- 
-
   //Mapping Data and creating each question card
   //nanoID for key
   const questionCard = questions.map((questionObj, ind) => {
@@ -48,6 +46,5 @@ function QuestionsPage({ questions, answerTrue, answerFalse, checkAns }) {
     </>
   )
 }
-
 
 export default QuestionsPage

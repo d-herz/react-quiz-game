@@ -5,17 +5,10 @@ import Footer from "./Footer"
 import { nanoid } from "nanoid"
 
 //questions props is trivia state array from <App> fetch 
-function QuestionsPage({ questions, answerTrue, answerFalse }) {
-
-
-  //Check Answer on button click
-  function checkAns() {
-    console.log("Answers Checked")
-  }
+function QuestionsPage({ questions, answerTrue, answerFalse, checkAns }) {
 
 
  
-
 
   //Mapping Data and creating each question card
   //nanoID for key

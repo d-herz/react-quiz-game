@@ -2,24 +2,6 @@ import React from 'react'
 
 function Question(props) {
 
-  //might have to elevate these button handlers
-  //Idea: set a "choice/selected" property on each answer as a boolean that is switched based on selected
-  //Buttons need to hold a different style on click as well
-  // function answerTrue(event, id){
-  //   if(props.ans === "True"){
-  //     console.log("True, correct!", id)
-  //     console.log(event.target)
-  //   }else{
-  //     console.log("Not true, wrong!")
-  //   }
-  // }
-  // function answerFalse(event, id){
-  //   if(props.ans === "False"){
-  //     console.log("False, correct!", id)
-  //   }else{
-  //     console.log("Not false, wrong!")
-  //   }
-  // }
 
   const btnStyles = {
     // backgroundImage: props.playerChoice ? "none" :
@@ -38,18 +20,24 @@ function Question(props) {
         {/* <h4 className="question--answer--text">
           {ans}
         </h4> */}
-        <button type='button' style={btnStyles}
-        className='btn btn--ans'
-        onClick={(event) => props.answerTrue(event, props.id)}
+        <input
+          type='button'
+          style={btnStyles}
+          className='btn btn--ans'
+          value="True"
+          onClick={(event) => props.answerTrue(event, props.id)}
         >
-          TRUE
-        </button>
-        <button type='button' style={btnStyles}
-        className='btn btn--ans'
-        onClick={(event) => props.answerFalse(event, props.id)}
+          
+        </input>
+        <input
+          type='button'
+          style={btnStyles}
+          className='btn btn--ans'
+          value="False"
+          onClick={(event) => props.answerFalse(event, props.id)}
         >
-          FALSE
-        </button>
+          
+        </input>
       </div>
     </div>
 

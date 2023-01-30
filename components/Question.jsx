@@ -4,8 +4,8 @@ function Question(props) {
 
 
   const btnStyles = {
-    // backgroundImage: props.playerChoice ? "none" :
-    //   "linear-gradient(#42A1EC, #0070C9)",
+    backgroundImage: props.playerChoice ? "linear-gradient(#AA0000, #EF0107)" :
+      "linear-gradient(#42A1EC, #0070C9)",
       
   }
 
@@ -26,18 +26,15 @@ function Question(props) {
           className='btn btn--ans'
           value="True"
           onClick={(event) => props.answerSelect(event, props.id)}
-        >
+        />
           
-        </input>
         <input
           type='button'
           style={btnStyles}
           className='btn btn--ans'
           value="False"
           onClick={(event) => props.answerSelect(event, props.id)}
-        >
-          
-        </input>
+        />
       </div>
     </div>
 

@@ -5,11 +5,16 @@ import Start from "./components/Start"
 // import Footer from "./components/Footer"
 import QuestionsPage from "./components/QuestionsPage";
 
+
+
 export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
 
-  //Populate initial questions array with 5 easy boolean questions from game category (15)
+  //Initial state questions array to be populated by api call with 5 easy boolean questions from game category (15)
   const [questions, setQuestions] = React.useState([])
+
+  //State for tracking button choices only?
+  const [chosen, setChosen] = React.useState(false)
 
   //Fetch to trivia api for questions
   React.useEffect(() => {
@@ -39,6 +44,7 @@ export default function App() {
   }
 
   //button click handlers on question cards to be passed down to question.jsx. This updates the questions state property "playerChoice", and "isCorrect"
+  //Should we use event.target.style to update button style?
   function answerSelect(event, id) {
     setQuestions(prevQuestions => {
       return prevQuestions.map((ques) => {
@@ -60,6 +66,10 @@ export default function App() {
   //Maybe use array.every and check that every playerChoice is equal to every "answer"
   function checkAns() {
     console.log("Answers Checked")
+    const allCorrect = questions.every(quesObj => quesObj.isCorrect === true ? true : false)
+    console.log(allCorrect)
+
+
     const playerAnswers = questions.map(ques => ques.playerChoice)
     console.log(playerAnswers)
 

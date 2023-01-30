@@ -5,7 +5,7 @@ import Footer from "./Footer"
 import { nanoid } from "nanoid"
 
 //questions props is trivia state array from <App> fetch 
-function QuestionsPage({ questions, answerTrue, answerFalse, checkAns }) {
+function QuestionsPage({ questions, answerSelect, checkAns }) {
 
 
   //Mapping Data and creating each question card
@@ -18,8 +18,7 @@ function QuestionsPage({ questions, answerTrue, answerFalse, checkAns }) {
         ask={questionObj.question}
         ans={questionObj.answer}
         playerChoice={questionObj.playerChoice}
-        answerTrue={answerTrue}
-        answerFalse={answerFalse}
+        answerSelect={answerSelect}
         // btnStyles={btnStyles}
       />
     )

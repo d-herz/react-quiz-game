@@ -10,6 +10,7 @@ export default function App() {
 
   //Populate initial questions array with 5 easy boolean questions from game category (15)
   const [questions, setQuestions] = React.useState([])
+
   //Fetch to trivia api for questions
   React.useEffect(() => {
     async function getQuestions() {
@@ -22,19 +23,13 @@ export default function App() {
           question: atob(obj.question),
           answer: atob(obj.correct_answer),
           playerChoice: "",
+          isCorrect: "No"
         }
       })
       setQuestions(cleanedData)
     }
     getQuestions()
   }, [])
-
-  //effect to run after every answer choice? Update a state?
-  // const [playerChoices, setPlayerChoices] = React.useState()
-  // React.useEffect(() => {
-
-    
-  // },[questions])
 
   console.log(questions)
 
@@ -43,29 +38,20 @@ export default function App() {
     setGameStart(!gameStart)
   }
 
-  //button click handlers on question cards to be passed down to question.jsx. This updates the questions state property "playerChoice"
-  function answerTrue(event, id) {
+  //button click handlers on question cards to be passed down to question.jsx. This updates the questions state property "playerChoice", and "isCorrect"
+  function answerSelect(event, id) {
     setQuestions(prevQuestions => {
       return prevQuestions.map((ques) => {
         return ques.id === id ?
-          { ...ques, playerChoice: event.target.value } :
+          {
+            ...ques,
+            playerChoice: event.target.value,
+            isCorrect: event.target.value === ques.answer ? true : false
+          } :
           ques
       })
     })
     console.log("True")
-    console.log(id)
-    console.log(questions)
-  }
-
-  function answerFalse(event, id) {
-    setQuestions(prevQuestions => {
-      return prevQuestions.map((ques) => {
-        return ques.id === id ?
-          { ...ques, playerChoice: event.target.value } :
-          ques
-      })
-    })
-    console.log("False")
     console.log(id)
     console.log(questions)
   }
@@ -93,8 +79,7 @@ export default function App() {
         gameStart ?
           <QuestionsPage
             questions={questions}
-            answerTrue={answerTrue}
-            answerFalse={answerFalse}
+            answerSelect={answerSelect}
             checkAns={checkAns}
           /> :
           <Start

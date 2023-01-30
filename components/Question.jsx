@@ -25,7 +25,7 @@ function Question(props) {
           style={btnStyles}
           className='btn btn--ans'
           value="True"
-          onClick={(event) => props.answerTrue(event, props.id)}
+          onClick={(event) => props.answerSelect(event, props.id)}
         >
           
         </input>
@@ -34,7 +34,7 @@ function Question(props) {
           style={btnStyles}
           className='btn btn--ans'
           value="False"
-          onClick={(event) => props.answerFalse(event, props.id)}
+          onClick={(event) => props.answerSelect(event, props.id)}
         >
           
         </input>

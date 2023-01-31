@@ -4,6 +4,7 @@ import React from 'react'
 //Should we define an array that combines correct and wrong answers? So they aren't in the same location everytime?
 
 //could set style here? default and chosen??
+//maybe disable rest of buttons after one is chosen (so only 1 can be chosen at a time)
 
 function AnswerButton(props) {
   return (

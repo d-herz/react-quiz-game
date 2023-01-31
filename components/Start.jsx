@@ -4,12 +4,8 @@ import Footer from "./Footer";
 
 function Start(props) {
 
-  const styles = {
-    display: "flex",
-  }
-
   return (
-    <section className="start--main" style={styles}>
+    <section className="start--main" >
       <nav>
 
       </nav>
@@ -27,6 +23,7 @@ function Start(props) {
           onClick={props.handleStart}>
           Start Quiz!
         </button>
+        
         <Footer />
       </div>
 

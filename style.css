@@ -139,6 +139,10 @@ body {
   width: auto;
 }
 
+.btn--ans:hover {
+  text-decoration: underline;
+}
+
 .btn--check--ans {
   font-weight: bold;
   height: auto;

@@ -6,11 +6,24 @@ import AnswerButtons from './AnswerButtons'
 
 function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask }) {
   
-  // const btnStyles = {
-  //   backgroundImage: playerChoice ? "linear-gradient(#AA0000, #EF0107)" :
-  //     "linear-gradient(#42A1EC, #0070C9)",
+
+  //State for tracking button choices only?
+  // const [isDisabled, setIsDisabled] = React.useState(false)
+
+  // function disableBtns(event,id) {
+  //   setIsDisabled(prevIsDisabled => {
       
+  //     answerArr.map(ans => {
+  //       return event.target.value === ans ? prevIsDisabled : !prevIsDisabled
+        
+  //     })
+
+  //     console.log(prevIsDisabled)
+  //   })
+  //   console.log("buttons")
   // }
+  // console.log(isDisabled)
+
 
   //Map over each questions answer array and return the neccesary buttons
   const answerButtons = answerArr.map((ans, ind) => {
@@ -22,6 +35,8 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask }) {
         // btnStyles={btnStyles}
         answerSelect={answerSelect}
         playerChoice={playerChoice}
+        // isDisabled={isDisabled}
+        // disableBtns={disableBtns}
       />
     )
   })

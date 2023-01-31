@@ -22,8 +22,8 @@ export default function App() {
   React.useEffect(() => {
     async function getQuestions() {
 
-      // const res = await fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
-      const res = await fetch(`https://opentdb.com/api.php?amount=10&encode=base64`)
+      const res = await fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
+      // const res = await fetch(`https://opentdb.com/api.php?amount=10&encode=base64`)
       const data = await res.json()
 
       const cleanedData = await data.results.map(obj => {
@@ -57,16 +57,19 @@ export default function App() {
     setGameStart(!gameStart)
   }
 
-  //button click handlers on question cards to be passed down to question.jsx. This updates the questions state property "playerChoice", and "isCorrect"
-  //Should we use event.target.style to update button style?
+  //Click handler passed to AnswerButtons. This updates the questions state property "playerChoice", and "isCorrect"
+  
+
   function answerSelect(event, id) {
+    console.log(id)
     setQuestions(prevQuestions => {
+
       return prevQuestions.map((ques) => {
         return ques.id === id ?
           {
             ...ques,
             playerChoice: event.target.value,
-            isCorrect: event.target.value === ques.answer ? true : false
+            isCorrect: event.target.value === ques.answerCorrect ? true : false
           } :
           ques
       })

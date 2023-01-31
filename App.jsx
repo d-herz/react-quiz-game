@@ -14,23 +14,37 @@ export default function App() {
   const [questions, setQuestions] = React.useState([])
 
   //State for tracking button choices only?
-  const [chosen, setChosen] = React.useState(false)
+  const [buttons, setButtons] = React.useState(false)
+
+  
 
   //Fetch to trivia api for questions
   React.useEffect(() => {
     async function getQuestions() {
+
       const res = await fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
+      // const res = await fetch(`https://opentdb.com/api.php?amount=10&encode=base64`)
       const data = await res.json()
 
       const cleanedData = await data.results.map(obj => {
+        //first get and clean all answers, store in a reverse sorted array:
+        let quesAnswers = []
+        //ternary because if multi choice, needs to map over array of incorrect answers
+        let cleanWrongAnswers = obj.incorrect_answers.length > 1 ? obj.incorrect_answers.map(x => atob(x)) : [atob(obj.incorrect_answers)]
+        let cleanRightAnswer = atob(obj.correct_answer)
+        quesAnswers=cleanWrongAnswers.concat(cleanRightAnswer).sort().reverse()
+
         return {
           id: nanoid(),
           question: atob(obj.question),
-          answer: atob(obj.correct_answer),
+          answerCorrect: cleanRightAnswer,
+          // answerIncorrect: [atob(obj.incorrect_answers)],
           playerChoice: "",
-          isCorrect: "No"
+          isCorrect: "No",
+          answerArray: quesAnswers
         }
       })
+
       setQuestions(cleanedData)
     }
     getQuestions()

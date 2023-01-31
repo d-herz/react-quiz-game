@@ -19,6 +19,9 @@ function QuestionsPage({ questions, answerSelect, checkAns }) {
         ans={questionObj.answer}
         playerChoice={questionObj.playerChoice}
         answerSelect={answerSelect}
+
+
+        answerArr={questionObj.answerArray}
         // btnStyles={btnStyles}
       />
     )

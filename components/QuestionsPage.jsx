@@ -16,13 +16,9 @@ function QuestionsPage({ questions, answerSelect, checkAns }) {
         key={nanoid()}
         id={questionObj.id}
         ask={questionObj.question}
-        ans={questionObj.answer}
         playerChoice={questionObj.playerChoice}
         answerSelect={answerSelect}
-
-
         answerArr={questionObj.answerArray}
-        // btnStyles={btnStyles}
       />
     )
   })

@@ -10,9 +10,9 @@ function AnswerButton(props) {
   return (
     <input
       type='button'
-      style={btnStyles}
+      style={props.btnStyles}
       className='btn btn--ans'
-      value="True"
+      value={props.value}
       onClick={(event) => props.answerSelect(event, props.id)}
     />
 

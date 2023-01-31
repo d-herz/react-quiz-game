@@ -22,8 +22,8 @@ export default function App() {
   React.useEffect(() => {
     async function getQuestions() {
 
-      const res = await fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
-      // const res = await fetch(`https://opentdb.com/api.php?amount=10&encode=base64`)
+      // const res = await fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
+      const res = await fetch(`https://opentdb.com/api.php?amount=10&encode=base64`)
       const data = await res.json()
 
       const cleanedData = await data.results.map(obj => {
@@ -71,7 +71,7 @@ export default function App() {
           ques
       })
     })
-    console.log("True")
+    console.log(event.target.value)
     console.log(id)
     console.log(questions)
   }

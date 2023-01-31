@@ -13,9 +13,6 @@ export default function App() {
   //Initial state questions array to be populated by api call with 5 easy boolean questions from game category (15)
   const [questions, setQuestions] = React.useState([])
 
-  
-  
-
   //Fetch to trivia api for questions
   React.useEffect(() => {
     async function getQuestions() {
@@ -45,7 +42,7 @@ export default function App() {
 
       setQuestions(cleanedData)
     }
-    console.log(questions)
+    // console.log(questions)
     getQuestions()
   }, [])
 
@@ -92,14 +89,23 @@ export default function App() {
     const playerAnswers = questions.map(ques => ques.playerChoice)
     console.log(playerAnswers)
 
-    const correctAnswers = questions.map(ques => ques.answer)
+    const correctAnswers = questions.map(ques => ques.answerCorrect)
     console.log(correctAnswers)
+
     
+
     if (playerAnswers.every((val, idx) => val === correctAnswers[idx])) {
+
       console.log("All Correct")
+      console.log("Great Job!!")
+    } else if (playerAnswers.some((val) => val=== "")) {
+      console.log("You have unanswered questions")
+
     } else {
-      console.log("You made mistakes")
+      console.log("you made mistakes")
     }
+
+    // set styles somehow
   }
 
   return (

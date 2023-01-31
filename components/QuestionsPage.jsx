@@ -19,6 +19,7 @@ function QuestionsPage({ questions, answerSelect, checkAns }) {
         playerChoice={questionObj.playerChoice}
         answerSelect={answerSelect}
         answerArr={questionObj.answerArray}
+        isCorrect={questionObj.isCorrect}
       />
     )
   })

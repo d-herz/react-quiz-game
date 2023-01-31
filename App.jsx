@@ -13,9 +13,7 @@ export default function App() {
   //Initial state questions array to be populated by api call with 5 easy boolean questions from game category (15)
   const [questions, setQuestions] = React.useState([])
 
-  //State for tracking button choices only?
-  const [buttons, setButtons] = React.useState(false)
-
+  
   
 
   //Fetch to trivia api for questions
@@ -41,16 +39,16 @@ export default function App() {
           // answerIncorrect: [atob(obj.incorrect_answers)],
           playerChoice: "",
           isCorrect: "No",
-          answerArray: quesAnswers
+          answerArray: quesAnswers,
         }
       })
 
       setQuestions(cleanedData)
     }
+    console.log(questions)
     getQuestions()
   }, [])
 
-  console.log(questions)
 
   //Start Quiz Function
   function handleStartQuiz() {
@@ -58,10 +56,9 @@ export default function App() {
   }
 
   //Click handler passed to AnswerButtons. This updates the questions state property "playerChoice", and "isCorrect"
-  
+
 
   function answerSelect(event, id) {
-    console.log(id)
     setQuestions(prevQuestions => {
 
       return prevQuestions.map((ques) => {
@@ -71,13 +68,18 @@ export default function App() {
             playerChoice: event.target.value,
             isCorrect: event.target.value === ques.answerCorrect ? true : false
           } :
-          ques
+          {
+            ...ques,
+
+          }
       })
     })
     console.log(event.target.value)
     console.log(id)
-    console.log(questions)
+    // console.log(questions)
+
   }
+
 
   //Check Answer on button click also passed down to question
   //Maybe use array.every and check that every playerChoice is equal to every "answer"

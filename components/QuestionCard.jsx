@@ -6,11 +6,11 @@ import AnswerButtons from './AnswerButtons'
 
 function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask }) {
   
-  const btnStyles = {
-    backgroundImage: playerChoice ? "linear-gradient(#AA0000, #EF0107)" :
-      "linear-gradient(#42A1EC, #0070C9)",
+  // const btnStyles = {
+  //   backgroundImage: playerChoice ? "linear-gradient(#AA0000, #EF0107)" :
+  //     "linear-gradient(#42A1EC, #0070C9)",
       
-  }
+  // }
 
   //Map over each questions answer array and return the neccesary buttons
   const answerButtons = answerArr.map((ans, ind) => {
@@ -19,8 +19,9 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask }) {
         key={nanoid()}
         id={id}
         value={ans}
-        btnStyles={btnStyles}
+        // btnStyles={btnStyles}
         answerSelect={answerSelect}
+        playerChoice={playerChoice}
       />
     )
   })

@@ -61,7 +61,6 @@ export default function App() {
   
 
   function answerSelect(event, id) {
-    console.log(id)
     setQuestions(prevQuestions => {
 
       return prevQuestions.map((ques) => {

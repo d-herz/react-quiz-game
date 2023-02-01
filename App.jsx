@@ -91,6 +91,14 @@ export default function App() {
 
   function checkAns() {
 
+    //Logic to break out of check answer if some questions are not answered
+    for (let i = 0; i < questions.length; i++) {
+      if (questions[i].playerChoice === "") {
+        alert("You have unanswered questions!")
+        console.log("you have unanswered questions")
+        return 
+      }
+    }
     handleAnswerCheck()
 
     // console.log("Answers Checked")

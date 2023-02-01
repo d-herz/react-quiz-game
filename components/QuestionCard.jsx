@@ -9,8 +9,6 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
   //considering moving styles up to QuestionPage, and move check answers down to QuestionPage (so it can be accessed on the same level..?)
   const btnStylesDefault = {
     backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
-    // cursor: "not-allowed",
-    // pointerEvents: "none"
   }
   const btnStylesSelected = {
     backgroundImage: "linear-gradient(#3D94D9, #0067B9)",
@@ -19,9 +17,6 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
     outline: "none",
     fontWeight: "bold",
   }
-
-  let playerChoiceIsCorrect = playerChoice === answerCorrect ? true : false;
-  // console.log(playerChoiceIsCorrect)
 
   const btnStylesAnswerCheckCorrect = {
     backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
@@ -40,6 +35,14 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
     boxShadow: "rgba(255, 175, 24, 0.9) 0 0 0 3px",
     borderColor: "#006DBC",
     outline: "none",
+  }
+  const btnStylesAnswerCheckOtherAnswers = {
+    backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
+    boxShadow: "rgba(186, 186, 186, 0.9) 0 0 0 3px",
+    borderColor: "#006DBC",
+    outline: "none",
+    pointerEvents: "none",
+
   }
   
   let styles  
@@ -67,6 +70,9 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
       } else if (playerChoice === ans && answerCorrect !== ans) {
         styles = btnStylesAnswerCheckWrong
 
+      }else if( playerChoice !== ans && answerCorrect !== ans){
+        //reveals correct answer by omission..
+        styles = btnStylesAnswerCheckOtherAnswers
 
       }else {
         styles = btnStylesDefault

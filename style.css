@@ -7,8 +7,9 @@ html {
 }
 
 body {
-  /* background-color: #0B2434;
-  display: flex;
+  background-color: #2556b1;
+  color: white;
+  /* display: flex;
   align-items: center;
   justify-content: center; */
   font-family: 'Karla', sans-serif;
@@ -39,7 +40,7 @@ body {
 
 .start--quiz--container {
   border-bottom: 1px solid black;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,12 +62,13 @@ body {
   min-width: 60%;
   max-width: 85%;
   margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .question--card {
   border-bottom: 1px solid black;
   border-right: 1px solid black;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,12 +80,15 @@ body {
 
 .question--text {
   font-size: 1.6rem;
+  margin-bottom: 5px;
 }
 
 .question--answers {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 75%;
+  padding: 10px;
 
 }
 
@@ -137,6 +142,8 @@ body {
 .btn--ans {
   height: auto;
   width: auto;
+  min-width: 40%;
+  margin: 6px;
 }
 
 .btn--ans:hover {
@@ -149,7 +156,5 @@ body {
   width: auto;
 }
 
-/* .btn--start{
 
-} */
 

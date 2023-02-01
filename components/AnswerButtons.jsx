@@ -10,8 +10,6 @@ function AnswerButton({ id, value, answerSelect, styles}) {
  
   return (
     <input
-      // Set button name to a unique ID, or the id from props (which means all button "names" for a question are same id as the question)
-      // name={nanoid()}
       name={id}
       type='button'
       style={styles}

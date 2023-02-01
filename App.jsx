@@ -10,7 +10,7 @@ import QuestionsPage from "./components/QuestionsPage";
 export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
 
-  //State for tracking answers checked and changing styles
+  //State for tracking if answers are checked and changing styles
   const [answersChecked, setAnswersChecked] = React.useState(false)
 
   //Initial state questions array to be populated by api call with 5 easy boolean questions from game category (15)
@@ -20,12 +20,12 @@ export default function App() {
   React.useEffect(() => {
     async function getQuestions() {
 
-      const res = await fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
-      // const res = await fetch(`https://opentdb.com/api.php?amount=10&encode=base64`)
+      // const res = await fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
+      const res = await fetch(`https://opentdb.com/api.php?amount=3&encode=base64`)
       const data = await res.json()
 
       const cleanedData = await data.results.map(obj => {
-        //first get and clean all answers, store in a reverse sorted array:
+        //Get and clean all answers, store in a reverse sorted array:
         let quesAnswers = []
         //ternary because if multi choice, needs to map over array of incorrect answers
         let cleanWrongAnswers = obj.incorrect_answers.length > 1 ? obj.incorrect_answers.map(x => atob(x)) : [atob(obj.incorrect_answers)]
@@ -72,27 +72,28 @@ export default function App() {
           }
       })
     })
-    console.log(event.target.value)
-    console.log(id)
-    console.log(questions)
+    // console.log(event.target.value)
+    // console.log(id)
+    setAnswersChecked(false)
   }
-
+  
+  console.log(questions)
 
   //Check Answer on button click also passed down to question
-  //Maybe use array.every and check that every playerChoice is equal to every "answer"
 
-  //Check Answers Handler Function
+
+  //Check Answers State Handler Function
   function handleAnswerCheck() {
     setAnswersChecked(!answersChecked)
   }
-  console.log(answersChecked)
+  // console.log(answersChecked)
 
 
   function checkAns() {
 
     handleAnswerCheck()
 
-    console.log("Answers Checked")
+    // console.log("Answers Checked")
     const allCorrect = questions.every(quesObj => quesObj.isCorrect === true ? true : false)
     // console.log(allCorrect)
 

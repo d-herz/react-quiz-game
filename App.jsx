@@ -10,6 +10,9 @@ import QuestionsPage from "./components/QuestionsPage";
 export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
 
+  //State for tracking answers checked and changing styles
+  const [answersChecked, setAnswersChecked] = React.useState(false)
+
   //Initial state questions array to be populated by api call with 5 easy boolean questions from game category (15)
   const [questions, setQuestions] = React.useState([])
 
@@ -53,8 +56,6 @@ export default function App() {
   }
 
   //Click handler passed to AnswerButtons. This updates the questions state property "playerChoice", and "isCorrect"
-
-
   function answerSelect(event, id) {
     setQuestions(prevQuestions => {
 
@@ -73,39 +74,51 @@ export default function App() {
     })
     console.log(event.target.value)
     console.log(id)
-    // console.log(questions)
-
+    console.log(questions)
   }
 
 
   //Check Answer on button click also passed down to question
   //Maybe use array.every and check that every playerChoice is equal to every "answer"
+
+  //Check Answers Handler Function
+  function handleAnswerCheck() {
+    setAnswersChecked(!answersChecked)
+  }
+  console.log(answersChecked)
+
+
   function checkAns() {
+
+    handleAnswerCheck()
+
     console.log("Answers Checked")
     const allCorrect = questions.every(quesObj => quesObj.isCorrect === true ? true : false)
-    console.log(allCorrect)
+    // console.log(allCorrect)
 
 
     const playerAnswers = questions.map(ques => ques.playerChoice)
-    console.log(playerAnswers)
+    // console.log(playerAnswers)
 
     const correctAnswers = questions.map(ques => ques.answerCorrect)
-    console.log(correctAnswers)
+    // console.log(correctAnswers)
 
     
+    let unansweredQuestions = []
+    for (let i = 0; i < playerAnswers.length; i++) {
+      if (playerAnswers[i] === "") {
+        unansweredQuestions.push(i+1)
+        console.log(` Please Answer Question #${i + 1}`)
+        console.log(unansweredQuestions)
+      }
+    }
 
     if (playerAnswers.every((val, idx) => val === correctAnswers[idx])) {
-
       console.log("All Correct")
       console.log("Great Job!!")
-    } else if (playerAnswers.some((val) => val=== "")) {
-      console.log("You have unanswered questions")
-
     } else {
       console.log("you made mistakes")
     }
-
-    // set styles somehow
   }
 
   return (
@@ -116,6 +129,7 @@ export default function App() {
             questions={questions}
             answerSelect={answerSelect}
             checkAns={checkAns}
+            answerCheckedState={answersChecked}
           /> :
           <Start
             handleStart={handleStartQuiz}

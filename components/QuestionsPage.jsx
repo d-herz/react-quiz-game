@@ -21,6 +21,7 @@ function QuestionsPage({ questions, answerSelect, checkAns, answerCheckedState }
         answerArr={questionObj.answerArray}
         isCorrect={questionObj.isCorrect}
         answersCheckedState={answerCheckedState}
+        answerCorrect={questionObj.answerCorrect}
       />
     )
   })

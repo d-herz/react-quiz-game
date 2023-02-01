@@ -4,9 +4,9 @@ import { nanoid } from "nanoid"
 import AnswerButtons from './AnswerButtons'
 
 
-function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrect }) {
+function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrect, answersCheckedState }) {
 
-  //considering moving styles up to QuestionCard, and move check answers down to QuestionCard (so it can be accessed on the same level..?)
+  //considering moving styles up to QuestionPage, and move check answers down to QuestionPage (so it can be accessed on the same level..?)
   const btnStylesDefault = {
     backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
     // cursor: "not-allowed",
@@ -17,15 +17,16 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
     borderColor: "#006DBC",
     boxShadow: "rgba(131, 192, 253, 0.9) 0 0 0 3px",
     outline: "none",
-    fontWeight: "bold"
+    fontWeight: "bold",
   }
 
   const btnStylesAnswerCheck = {
-    backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
-    borderColor: isCorrect ? "#11fa01" : "red",
-    boxShadow: "rgba(131, 192, 253, 0.9) 0 0 0 3px",
-    outline: "none",
-    fontWeight: "bold"
+    // backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
+    // borderColor: isCorrect ? "#11fa01" : "red",
+    // boxShadow: "rgba(131, 192, 253, 0.9) 0 0 0 3px",
+    // outline: "none",
+    // fontWeight: "bold",
+    color: "green"
     
   }
 
@@ -34,7 +35,21 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
 
   //Map over each questions answer array and return the neccesary buttons
   const answerButtons = answerArr.map((ans, ind) => {
-    styles = playerChoice === ans ? btnStylesSelected : btnStylesDefault
+
+    // styles = playerChoice === ans ? btnStylesSelected : btnStylesDefault
+    
+    if (!answersCheckedState) {
+      if (playerChoice === ans) {
+        styles = btnStylesSelected
+      } else if (playerChoice !== ans) {
+        styles = btnStylesDefault
+      }
+    } else if (answersCheckedState){
+      styles = btnStylesAnswerCheck
+    }
+
+
+    
     return (
       <AnswerButtons
         key={nanoid()}

@@ -96,6 +96,10 @@ body {
 
   /* max-width: 75%; */
 }
+.voidImage{
+  margin-top: 1.5rem;
+  max-width: 25%;
+}
 
 .question--text {
   /* border-bottom: 2px solid black; */
@@ -112,6 +116,14 @@ body {
   padding: 10px;
 
 }
+
+.questionPage--button--container{
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 .footer--main{
   display: flex;
@@ -196,7 +208,11 @@ body {
 }
 
 
+/* .questionPage--minorButtons .btn {
+  min-width: 35%;
+  margin: 5px;
 
+} */
 
 
 

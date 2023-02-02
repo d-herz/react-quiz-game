@@ -99,19 +99,14 @@ export default function App() {
     // console.log(event.target.value)
     // console.log(id)
     setAnswersChecked(false)
-  }
-  
+  }  
   console.log(questions)
-
-  //Check Answer on button click also passed down to question
-
 
   //Check Answers State Handler Function
   function handleAnswerCheck() {
     setAnswersChecked(!answersChecked)
   }
   // console.log(answersChecked)
-
 
   function checkAns() {
 
@@ -129,14 +124,12 @@ export default function App() {
     const allCorrect = questions.every(quesObj => quesObj.isCorrect === true ? true : false)
     // console.log(allCorrect)
 
-
     const playerAnswers = questions.map(ques => ques.playerChoice)
     // console.log(playerAnswers)
 
     const correctAnswers = questions.map(ques => ques.answerCorrect)
     // console.log(correctAnswers)
 
-    
     let unansweredQuestions = []
     for (let i = 0; i < playerAnswers.length; i++) {
       if (playerAnswers[i] === "") {
@@ -165,6 +158,7 @@ export default function App() {
             answerSelect={answerSelect}
             checkAns={checkAns}
             answerCheckedState={answersChecked}
+            handleStart={handleStartQuiz}
           /> :
           <Start
             handleStart={handleStartQuiz}

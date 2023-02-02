@@ -3,24 +3,25 @@ import React from 'react'
 import QuestionCard from './QuestionCard'
 import Header from "./Header"
 import Footer from "./Footer"
+import NoQuestions from './NoQuestions'
 import { nanoid } from "nanoid"
 
 //questions props is trivia state array from <App> fetch 
-function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns, answerCheckedState }) {
+function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns, answerCheckedState, handleStart }) {
 
 
   //Attaching name to category:
   let categoryName;
   if (category === 15) {
-    categoryName="Video Games"
+    categoryName = "Video Games"
   } else if (category === 9) {
-    categoryName="General Knowledge"
+    categoryName = "General Knowledge"
   } else if (category === 9) {
-    categoryName="General Knowledge"
+    categoryName = "General Knowledge"
   } else if (category === 9) {
-    categoryName="General Knowledge"
+    categoryName = "General Knowledge"
   } else if (category === 9) {
-    categoryName="General Knowledge"
+    categoryName = "General Knowledge"
   }
 
   //Mapping Data and creating each question card
@@ -43,38 +44,48 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
 
   return (
     <>
-      <Header/>
-      {/* display category and difficulty here? */}
+      <Header />
+
       <div className="question--info">
         <span>Category:{category}</span>
         <span>Difficulty:{difficulty}</span>
       </div>
       <section className="question--main">
         <div className="question--container">
-          {questionCard}
+          {questions.length > 1 ? questionCard : <NoQuestions />}
         </div>
 
-        <button
-          className="btn btn--check--ans"
-          onClick={checkAns}
-        >
-          Commit Answers
-        </button>
-        <button
-          className="btn "
+        <div className='questionPage--button--container'>
+
+          <button
+            className="btn btn--check--ans"
+            onClick={checkAns}
+          >
+            Commit Answers
+          </button>
           
-        >
-          More questions
-        </button>
-        <button
-          className="btn "
-        >
-          Play Again
-        </button>
+          <div>
+
+            <button
+              className="btn "
+            >
+              More questions
+            </button>
+
+            <button
+              className="btn "
+              onClick={handleStart}
+            >
+              Play Again
+            </button>
+          </div>
+
+        </div>
+
 
       </section>
       <div className="footer--container">
-        <Footer/>
+        <Footer />
       </div>
     </>
   )

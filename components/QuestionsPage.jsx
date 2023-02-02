@@ -41,9 +41,22 @@ function QuestionsPage({ questions, answerSelect, checkAns, answerCheckedState }
         >
           Commit Answers
         </button>
+        <button
+          className="btn "
+          
+        >
+          More questions
+        </button>
+        <button
+          className="btn "
+        >
+          Play Again
+        </button>
 
       </section>
-      <Footer/>
+      <div className="footer--container">
+        <Footer/>
+      </div>
     </>
   )
 }

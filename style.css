@@ -25,7 +25,9 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  letter-spacing: 3px;
 }
+
 
 /* Start Page */
 .start--main {
@@ -53,7 +55,16 @@ body {
   padding: 1rem;
 }
 
+
+.start--selection--container{
+  margin: 10px;
+}
+
 /* Question Page */
+.question--info{
+  display: flex;
+  justify-content: center;
+}
 .question--main {
   display: flex;
   flex-direction: column;

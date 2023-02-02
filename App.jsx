@@ -16,12 +16,17 @@ export default function App() {
   //Initial state questions array to be populated by api call with 5 easy boolean questions from game category (15)
   const [questions, setQuestions] = React.useState([])
 
+  //State for changing category (reruns fetch) do same for difficulty
+  //Defaulting to games (category 15)
+  const [category, setCategory] = React.useState(15)
+  const [difficulty, setDifficulty] = React.useState("easy")
+
   //Fetch to trivia api for questions
   React.useEffect(() => {
     async function getQuestions() {
 
-      // const res = await fetch(`https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=boolean&encode=base64`)
-      const res = await fetch(`https://opentdb.com/api.php?amount=3&encode=base64`)
+      const res = await fetch(`https://opentdb.com/api.php?amount=5&category=${category}&difficulty=${difficulty}&type=boolean&encode=base64`)
+      // const res = await fetch(`https://opentdb.com/api.php?amount=3&encode=base64`)
       const data = await res.json()
 
       const cleanedData = await data.results.map(obj => {
@@ -47,12 +52,21 @@ export default function App() {
     }
     // console.log(questions)
     getQuestions()
-  }, [])
+  }, [category, difficulty])
 
 
   //Start Quiz Function
   function handleStartQuiz() {
     setGameStart(!gameStart)
+  }
+
+  function handleCategoryChange(event) {
+    console.log(event.target.value)
+    setCategory(event.target.value)
+  }
+  function handleDifficultyChange(event) {
+    console.log(event.target.value)
+    setDifficulty(event.target.value)
   }
 
   //Click handler passed to AnswerButtons. This updates the questions state property "playerChoice", and "isCorrect"
@@ -135,6 +149,8 @@ export default function App() {
       {
         gameStart ?
           <QuestionsPage
+            category={category}
+            difficulty={difficulty}
             questions={questions}
             answerSelect={answerSelect}
             checkAns={checkAns}
@@ -142,6 +158,10 @@ export default function App() {
           /> :
           <Start
             handleStart={handleStartQuiz}
+            handleCategoryChange={handleCategoryChange}
+            category={category}
+            difficulty={difficulty}
+            handleDifficultyChange={handleDifficultyChange}
           />
       }
     </main>

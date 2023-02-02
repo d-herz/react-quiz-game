@@ -7,7 +7,7 @@ function Footer(props) {
       <h4 className="footer--text">
         <a href="https://WebDevDan.com">WebDevDan.com</a>
       </h4>
-      <p class="footer--text">
+      <p className="footer--text">
         Copyright © 2023 - All rights reserved
       </p>
     </footer>

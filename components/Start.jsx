@@ -21,7 +21,7 @@ function Start(props) {
             Choose your Settings:
           </p>
 
-          <div >
+          <div className="start--selection--container">
             <label htmlFor="chooseAmount">Amount:</label>
             <select
               name="amount"
@@ -34,7 +34,8 @@ function Start(props) {
               <option value={11}>10</option>
             </select>
           </div>
-          <div >
+
+          <div className="start--selection--container">
             <label htmlFor="chooseCategory">Category:</label>
             <select
               name="category"

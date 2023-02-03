@@ -1,4 +1,3 @@
-//Page for rendering all of the question cards
 import React from 'react'
 import QuestionCard from './QuestionCard'
 import Header from "./Header"
@@ -6,9 +5,7 @@ import Footer from "./Footer"
 import NoQuestions from './NoQuestions'
 import { nanoid } from "nanoid"
 
-//questions props is trivia state array from <App> fetch 
 function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns, answerCheckedState, handleStart }) {
-
 
   //Attaching name to category:
   let categoryName;
@@ -56,7 +53,6 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
         </div>
 
         <div className='questionPage--button--container'>
-
           <button
             className="btn btn--check--ans"
             onClick={checkAns}
@@ -65,24 +61,21 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
           </button>
           
           <div className='questionPage--minorButtons'>
-
             <button
               className="btn btn--other--left"
-            >
-              More questions
+              onClick={handleStart}
+              >
+              Play Again
             </button>
-
             <button
               className="btn btn--other--right"
               onClick={handleStart}
-            >
-              Play Again
+              >
+              More questions
             </button>
           </div>
 
         </div>
-
-
       </section>
       <div className="footer--container">
         <Footer />

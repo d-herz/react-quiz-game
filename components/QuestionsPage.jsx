@@ -67,13 +67,13 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
           <div className='questionPage--minorButtons'>
 
             <button
-              className="btn "
+              className="btn btn--other--left"
             >
               More questions
             </button>
 
             <button
-              className="btn "
+              className="btn btn--other--right"
               onClick={handleStart}
             >
               Play Again

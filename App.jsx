@@ -54,7 +54,7 @@ export default function App() {
     }
     // console.log(questions)
     getQuestions()
-  }, [category, difficulty, type])
+  }, [amount, category, difficulty, type])
 
 
   //Start Quiz Function

@@ -16,9 +16,9 @@ function Start(props) {
           Quizzical!
         </h1>
         
-        <div className="start--selection--container">
-          <p className="start-description">
-            Choose your Settings:
+        <div className="start--selection--main--container">
+          <p className="start--description">
+            Choose your Question Settings:
           </p>
 
           <div className="start--selection--container">
@@ -27,7 +27,7 @@ function Start(props) {
               name="amount"
               id="chooseAmount"
               value={props.amount}
-              onChange={props.handleAmountChange}
+              onChange={props.handleSetAmount}
             >
               <option value={4}>4</option>
               <option value={8}>8</option>

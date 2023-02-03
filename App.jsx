@@ -19,8 +19,8 @@ export default function App() {
   //State for category and difficulty (reruns fetch)
   const [category, setCategory] = React.useState(15)
   const [difficulty, setDifficulty] = React.useState("easy")
-  const [type, setType] = React.useState("multiple")
-  const [amount, setAmount] = React.useState(5)
+  const [type, setType] = React.useState("boolean")
+  const [amount, setAmount] = React.useState(4)
 
   //Fetch to trivia api for questions
   React.useEffect(() => {

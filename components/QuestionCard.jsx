@@ -3,7 +3,6 @@ import React from 'react'
 import { nanoid } from "nanoid"
 import AnswerButtons from './AnswerButtons'
 
-
 function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrect, answersCheckedState, answerCorrect }) {
 
   //considering moving styles up to QuestionPage, and move check answers down to QuestionPage (so it can be accessed on the same level..?)
@@ -34,7 +33,7 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
   }
   const btnStylesAnswerCheckNoAnswer = {
     backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
-    boxShadow: "rgba(255, 175, 24, 0.9) 0 0 0 3px",
+    // boxShadow: "rgba(255, 175, 24, 0.9) 0 0 0 3px",
     borderColor: "#006DBC",
     outline: "none",
   }
@@ -56,7 +55,6 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
   
   let styles  
 
-
   //Map over each questions answer array and return the neccesary buttons
   const answerButtons = answerArr.map((ans, ind) => {
     // styles = playerChoice === ans ? btnStylesSelected : btnStylesDefault
@@ -68,21 +66,14 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
         styles = btnStylesDefault
       }
     } else if (answersCheckedState) {
-      
       if (playerChoice === "") {
         styles = btnStylesAnswerCheckNoAnswer
-
-      
       } else if (playerChoice === ans && answerCorrect === ans) {
         styles = btnStylesAnswerCheckCorrect
-
       } else if (playerChoice === ans && answerCorrect !== ans) {
         styles = btnStylesAnswerCheckWrong
-
       }else if( playerChoice !== ans && answerCorrect !== ans){
-        //reveals correct answer by omission..
         styles = btnStylesAnswerCheckOtherAnswers
-
       } else if (playerChoice !== ans && answerCorrect == ans) {
         styles = btnStylesAnswerCheckCorrectNotChosen
       }else {
@@ -109,6 +100,11 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
       </h2>
 
       <div className="question--answers">
+        
+        {answersCheckedState && isCorrect && <span>< i class="fa-regular fa-circle-check" ></i ></span>}
+        
+        {answersCheckedState && !isCorrect && <span>< i class="fa-regular fa-circle-xmark" ></i ></span>}
+        
         {answerButtons}
       </div>
     </div>
@@ -116,3 +112,9 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
 }
 
 export default QuestionCard
+
+  // < i class="fa-solid fa-xmark" ></i >
+  // < i class="fa-solid fa-check" ></i >
+
+  // < i class="fa-regular fa-circle-xmark" ></i >
+  // < i class="fa-regular fa-circle-check" ></i >

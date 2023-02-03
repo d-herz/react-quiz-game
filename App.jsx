@@ -79,10 +79,9 @@ export default function App() {
     setAmount(event.target.value)
   }
 
-  //Click handler passed to AnswerButtons. This updates the questions state property "playerChoice", and "isCorrect"
+  //State handler passed to AnswerButtons. Updates Questions state
   function answerSelect(event, id) {
     setQuestions(prevQuestions => {
-
       return prevQuestions.map((ques) => {
         return ques.id === id ?
           {
@@ -92,7 +91,6 @@ export default function App() {
           } :
           {
             ...ques,
-
           }
       })
     })

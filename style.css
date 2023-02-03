@@ -20,7 +20,7 @@ body {
 }
 
 /* NavBar */
-.navbar{
+.navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,6 +40,7 @@ body {
   margin-top: 5vh;
 }
 
+
 .start--quiz--container {
   background-image: linear-gradient(#42A1EC, #00335c);
   /* background-image: linear-gradient(#42A1EC, #0070C9); */
@@ -51,20 +52,47 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 1.5rem;
   margin-top: 1rem;
   padding: 1rem;
 }
 
+.start--title {
+  margin: 1rem 0 0 0;
+  letter-spacing: 3px;
+}
 
-.start--selection--container{
-  margin: 10px;
+.start--selection--main--container {
+  border-top: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.start--description {
+  margin: 1rem;
+}
+
+.start--selection--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+  margin: 1rem;
+}
+
+.start--selection--container label {
+  /* margin: 0 auto; */
 }
 
 /* Question Page */
-.question--info{
+.question--info {
   display: flex;
   justify-content: center;
 }
+
 .question--main {
   display: flex;
   flex-direction: column;
@@ -76,7 +104,7 @@ body {
 .question--container {
   min-width: 60%;
   max-width: 85%;
-  margin-bottom: 2.5rem;
+  margin: 2.5rem;
   text-align: center;
 }
 
@@ -96,7 +124,8 @@ body {
 
   /* max-width: 75%; */
 }
-.voidImage{
+
+.voidImage {
   margin-top: 1.5rem;
   max-width: 25%;
 }
@@ -117,7 +146,7 @@ body {
 
 }
 
-.questionPage--button--container{
+.questionPage--button--container {
   margin: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -125,27 +154,29 @@ body {
 }
 
 
-.footer--main{
+.footer--main {
+  border-top: 2px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 10px;
+  margin: 2rem 1.5rem 0 1.5rem;
 }
 
-.footer--container{
+.footer--container {
   box-shadow: -2px -2px 2px 1px rgba(0, 0, 0, 0.8);
   border-radius: 10px;
 }
 
-.footer--text{
+.footer--text {
   margin: 5px;
 }
 
-.footer--main a{
+.footer--main a {
+  color: white;
   text-decoration: none;
-  color: blue;
 }
+
 /* Buttons */
 .btn {
   /* height: 50px; */
@@ -170,7 +201,8 @@ body {
 /* .btn--start{
   
 } */
-.btn--start:active, .btn--check--ans:active {
+.btn--start:active,
+.btn--check--ans:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
@@ -213,6 +245,3 @@ body {
   margin: 5px;
 
 } */
-
-
-

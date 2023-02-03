@@ -64,7 +64,7 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
             Commit Answers
           </button>
           
-          <div>
+          <div className='questionPage--minorButtons'>
 
             <button
               className="btn "

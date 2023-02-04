@@ -137,10 +137,18 @@ body {
   margin-bottom: 5px;
   /* padding: 0.5rem; */
 }
+.question--text .fa-regular{
+    margin-right: 1rem;
+
+}
 
 .question--answers {
   display: flex;
+  /* flex-direction: column; */
+  flex-direction: row;
+  font-size: 2rem;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   width: 75%;
   padding: 10px;

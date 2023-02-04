@@ -20,7 +20,7 @@ export default function App() {
   const [category, setCategory] = React.useState(11)
   const [difficulty, setDifficulty] = React.useState("easy")
   const [type, setType] = React.useState("boolean")
-  const [amount, setAmount] = React.useState(4)
+  const [amount, setAmount] = React.useState(2)
 
   //Fetch to trivia api for questions
   React.useEffect(() => {

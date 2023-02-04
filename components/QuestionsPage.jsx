@@ -2,10 +2,17 @@ import React from 'react'
 import QuestionCard from './QuestionCard'
 import Header from "./Header"
 import Footer from "./Footer"
+import ReportCard from "./ReportCard"
 import NoQuestions from './NoQuestions'
 import { nanoid } from "nanoid"
 
 function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns, answerCheckedState, handleStart }) {
+
+  const [showGradeCard, setShowGradeCard] = React.useState(false)
+
+  function handleShowGrade() {
+    setShowGradeCard(!showGradeCard)
+  }
 
   //Attaching name to category:
   let categoryName;
@@ -47,7 +54,9 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
         <span>Category:{category}</span>
         <span>Difficulty:{difficulty}</span>
       </div>
+
       <section className="question--main">
+        {showGradeCard && <ReportCard />}
         <div className="question--container">
           {questions.length > 1 ? questionCard : <NoQuestions />}
         </div>
@@ -57,7 +66,7 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
             className="btn btn--check--ans"
             onClick={checkAns}
           >
-            Commit Answers
+            {!answerCheckedState ? "Commit Answers" : "Review Answers"}
           </button>
           
           <div className='questionPage--minorButtons'>
@@ -69,9 +78,9 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
             </button>
             <button
               className="btn btn--other--right"
-              onClick={handleStart}
+              onClick={handleShowGrade}
               >
-              More questions
+              See Score
             </button>
           </div>
 

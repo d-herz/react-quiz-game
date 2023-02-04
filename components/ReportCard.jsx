@@ -1,6 +1,24 @@
 import React from 'react'
 
-function ReportCard(props) {
+function ReportCard({ questions }) {
+  
+  let score = 0;
+  let outOf = questions.length
+  for (let i = 0; i < questions.length; i++) {
+    if (questions[i].isCorrect) {
+      score++
+    }
+  }
+  console.log(`You got ${score}/ ${outOf} correct`)
+
+
+  let responses = {
+    1: "Well, you tried",
+    2: "Well, you tried",
+    3: "Well, you tried",
+  }
+
+
   return (
 
     <section className="report--card--main" >
@@ -25,10 +43,10 @@ function ReportCard(props) {
           
         </div>
 
-        <button className="btn btn--start"
-          onClick={props.handleStart}>
+        {/* <button className="btn btn--start"
+          onClick={handleStart}>
           Start Quiz!
-        </button>
+        </button> */}
 
       
       </div>

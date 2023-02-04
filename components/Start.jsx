@@ -13,25 +13,25 @@ function Start(props) {
       <div className="start--quiz--container">
 
         <h1 className="start--title">
-          Quizzical!
+          QuizHub!
         </h1>
         
         <div className="start--selection--main--container">
           <p className="start--description">
-            Choose your Question Settings:
+            Quiz Settings
           </p>
 
           <div className="start--selection--container">
-            <label htmlFor="chooseAmount">Amount:</label>
+            <label htmlFor="chooseAmount">Questions:</label>
             <select
               name="amount"
               id="chooseAmount"
               value={props.amount}
               onChange={props.handleSetAmount}
             >
-              <option value={4}>4</option>
-              <option value={8}>8</option>
-              <option value={11}>10</option>
+              <option value={5}>5</option>
+              <option value={10}>10</option>
+              {/* <option value={11}>10</option> */}
             </select>
           </div>
 
@@ -43,9 +43,9 @@ function Start(props) {
               value={props.category}
               onChange={props.handleCategoryChange}
             >
+              <option value={11}>Films</option>
               <option value={9}>General</option>
               <option value={15}>Video Games</option>
-              <option value={11}>Films</option>
             </select>
           </div>
 

@@ -17,7 +17,7 @@ export default function App() {
   const [questions, setQuestions] = React.useState([])
 
   //State for category and difficulty (reruns fetch)
-  const [category, setCategory] = React.useState(15)
+  const [category, setCategory] = React.useState(11)
   const [difficulty, setDifficulty] = React.useState("easy")
   const [type, setType] = React.useState("boolean")
   const [amount, setAmount] = React.useState(4)
@@ -59,6 +59,7 @@ export default function App() {
 
   //Start Quiz Function
   function handleStartQuiz() {
+    setAnswersChecked(false)
     setGameStart(!gameStart)
   }
   //handlers for category and difficulty 

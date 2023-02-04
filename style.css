@@ -7,9 +7,11 @@ html {
 }
 
 body {
-  /* background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(90, 92, 106, 1) 0%, rgba(32, 45, 58, 1) 81.3%); */
-  background-image: radial-gradient(circle farthest-corner at 50.4% 50.5%, rgba(251, 32, 86, 1) 0%, rgba(135, 2, 35, 1) 90%);
+
+  /* background-image: radial-gradient(circle farthest-corner at 50.4% 50.5%, rgba(251, 32, 86, 1) 0%, rgba(135, 2, 35, 1) 90%); */
+  background-image: radial-gradient(circle 1250px at 85% 15%, rgba(12, 85, 141, 1) 31%, rgba(205, 181, 93, 1) 36%, rgba(244, 102, 90, 1) 51%, rgba(199, 206, 187, 1) 60.7%, rgba(249, 140, 69, 1) 72%, rgba(12, 73, 116, 1) 72.6%);
   color: white;
+  background-attachment: fixed ;
   /* display: flex;
   align-items: center;
   justify-content: center; */
@@ -70,22 +72,35 @@ body {
   align-items: flex-start;
   margin: 1.5rem;
   margin-top: 0.5rem;
+  min-width: 80%;
 }
 
 .start--description {
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
+  align-self: center;
 }
 
 .start--selection--container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 85%;
+  align-items: center;
+  min-width: 85%;
   margin: 1rem;
 }
 
 .start--selection--container label {
-  /* margin: 0 auto; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+}
+.start--selection--container select {
+  background-color: rgb(222, 227, 238);
+  border-radius: 0.75rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.55rem;
+  text-align: right;
+  padding-right: 0.25rem;
+  margin: 0.25rem 0.5rem;
 }
 
 /* Question Page */
@@ -213,9 +228,9 @@ body {
   text-align: center;
 }
 
-/* .btn--start{
-  
-} */
+ .btn--start{
+  font-weight: bold;  
+} 
 .btn--start:active,
 .btn--check--ans:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);

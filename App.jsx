@@ -120,13 +120,13 @@ export default function App() {
     handleAnswerCheck()
 
     // console.log("Answers Checked")
-    const allCorrect = questions.every(quesObj => quesObj.isCorrect === true ? true : false)
+    // const allCorrect = questions.every(quesObj => quesObj.isCorrect === true ? true : false)
     // console.log(allCorrect)
 
-    const playerAnswers = questions.map(ques => ques.playerChoice)
+    // const playerAnswers = questions.map(ques => ques.playerChoice)
     // console.log(playerAnswers)
 
-    const correctAnswers = questions.map(ques => ques.answerCorrect)
+    // const correctAnswers = questions.map(ques => ques.answerCorrect)
     // console.log(correctAnswers)
 
     let unansweredQuestions = []

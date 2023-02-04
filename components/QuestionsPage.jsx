@@ -56,7 +56,10 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
       </div>
 
       <section className="question--main">
-        {showGradeCard && <ReportCard />}
+        {showGradeCard && <ReportCard
+          questions={questions}
+          
+        />}
         <div className="question--container">
           {questions.length > 1 ? questionCard : <NoQuestions />}
         </div>
@@ -66,7 +69,7 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
             className="btn btn--check--ans"
             onClick={checkAns}
           >
-            {!answerCheckedState ? "Commit Answers" : "Review Answers"}
+            {!answerCheckedState ? "Check Answers" : "Review Answers"}
           </button>
           
           <div className='questionPage--minorButtons'>
@@ -78,7 +81,10 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
             </button>
             <button
               className="btn btn--other--right"
-              onClick={handleShowGrade}
+              onClick={() => {
+                checkAns()
+                handleShowGrade()
+              }}
               >
               See Score
             </button>

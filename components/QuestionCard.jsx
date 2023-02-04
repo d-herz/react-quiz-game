@@ -96,14 +96,15 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
   return (
     <div className="question--card">
       <h2 className="question--text">
+        {/* maybe implement a "score" box on each card that is always present, just empty before checking answers (and receiving the FA icons)*/}
+        {answersCheckedState && isCorrect && <span>< i className="fa-regular fa-circle-check" style={{ color: "#05fc05" }} ></i ></span>}
+        
+        {answersCheckedState && !isCorrect && <span>< i className="fa-regular fa-circle-xmark" style={{ color: "#Fa3c3d" }}></i ></span>}
         {ask}
       </h2>
 
       <div className="question--answers">
         
-        {answersCheckedState && isCorrect && <span>< i class="fa-regular fa-circle-check" ></i ></span>}
-        
-        {answersCheckedState && !isCorrect && <span>< i class="fa-regular fa-circle-xmark" ></i ></span>}
         
         {answerButtons}
       </div>

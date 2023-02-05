@@ -5,7 +5,8 @@ function Header(props) {
   return (
     <nav className='navbar'>
       <h2 className="navbar--text">
-        Quizzical!
+        <i className="fa-brands fa-earlybirds"></i>
+        QuizHub!
       </h2>
     </nav>
     

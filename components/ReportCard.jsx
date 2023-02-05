@@ -16,6 +16,7 @@ function ReportCard({ questions }) {
     1: "Well, you tried",
     2: "Well, you tried",
     3: "Well, you tried",
+    4: "Thanks for being here?"
   }
 
 
@@ -29,6 +30,7 @@ function ReportCard({ questions }) {
       <div className="report--card--container">
 
         <h1 className="start--title">
+          <i className="fa-brands fa-earlybirds"></i>
           QuizHub!
         </h1>
 

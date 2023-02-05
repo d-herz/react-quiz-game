@@ -26,7 +26,7 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
   }
   const btnStylesAnswerCheckWrong = {
     // backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
-    backgroundImage: "linear-gradient( rgba(237, 83, 83, 1) 30%,  rgba(165, 9, 9, 1) 90% )",
+    backgroundImage: "linear-gradient( rgba(237, 83, 83, 1) 30%,  rgba(165, 9, 9, 1) 60% )",
     boxShadow: "rgba(255, 7, 7, 0.9) 0 0 0 3px",
     borderColor: "#006DBC",
     outline: "none",

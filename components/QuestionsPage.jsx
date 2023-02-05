@@ -11,7 +11,13 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
   const [showGradeCard, setShowGradeCard] = React.useState(false)
 
   function handleShowGrade() {
-    setShowGradeCard(!showGradeCard)
+    //Needs better logic
+    if (!answerCheckedState) {
+      checkAns()
+      setShowGradeCard(!showGradeCard)
+    } else {
+      setShowGradeCard(!showGradeCard)
+    }
   }
 
   //Attaching name to category:
@@ -20,12 +26,22 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
     categoryName = "Video Games"
   } else if (category === 9) {
     categoryName = "General Knowledge"
+  } else if (category === 11) {
+    categoryName = "Films"
   } else if (category === 9) {
     categoryName = "General Knowledge"
   } else if (category === 9) {
     categoryName = "General Knowledge"
-  } else if (category === 9) {
-    categoryName = "General Knowledge"
+  }
+
+  let difficultyName = ''
+  if (difficulty === "easy") {
+    difficultyName = "Easy"
+  } else if (difficulty === "medium") {
+    difficultyName = "Medium"
+  } else if (difficulty === "hard") {
+    difficultyName = "Hard"
+
   }
 
   //Mapping Data and creating each question card
@@ -51,8 +67,8 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
       <Header />
 
       <div className="question--info">
-        <span>Category:{category}</span>
-        <span>Difficulty:{difficulty}</span>
+        <span>Category:{categoryName}</span>
+        <span>Difficulty:{difficultyName}</span>
       </div>
 
       <section className="question--main">
@@ -82,7 +98,7 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
             <button
               className="btn btn--other--right"
               onClick={() => {
-                checkAns()
+                // checkAns()
                 handleShowGrade()
               }}
               >

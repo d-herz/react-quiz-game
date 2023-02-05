@@ -13,6 +13,7 @@ function Start(props) {
       <div className="start--quiz--container">
 
         <h1 className="start--title">
+          <i className="fa-brands fa-earlybirds"></i>
           QuizHub!
         </h1>
         

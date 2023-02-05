@@ -108,7 +108,6 @@ export default function App() {
   // console.log(answersChecked)
 
   function checkAns() {
-
     //Logic to break out of check answer if some questions are not answered
     for (let i = 0; i < questions.length; i++) {
       if (questions[i].playerChoice === "") {
@@ -123,10 +122,10 @@ export default function App() {
     // const allCorrect = questions.every(quesObj => quesObj.isCorrect === true ? true : false)
     // console.log(allCorrect)
 
-    // const playerAnswers = questions.map(ques => ques.playerChoice)
+    const playerAnswers = questions.map(ques => ques.playerChoice)
     // console.log(playerAnswers)
 
-    // const correctAnswers = questions.map(ques => ques.answerCorrect)
+    const correctAnswers = questions.map(ques => ques.answerCorrect)
     // console.log(correctAnswers)
 
     let unansweredQuestions = []

@@ -5,7 +5,6 @@ import AnswerButtons from './AnswerButtons'
 
 function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrect, answersCheckedState, answerCorrect }) {
 
-  //considering moving styles up to QuestionPage, and move check answers down to QuestionPage (so it can be accessed on the same level..?)
   const btnStylesDefault = {
     backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
   }
@@ -53,11 +52,10 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
     pointerEvents: "none",
   }
   
-  let styles  
+  let styles;
 
   //Map over each questions answer array and return the neccesary buttons
   const answerButtons = answerArr.map((ans, ind) => {
-    // styles = playerChoice === ans ? btnStylesSelected : btnStylesDefault
     
     if (!answersCheckedState) {
       if (playerChoice === ans) {
@@ -104,8 +102,6 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
       </h2>
 
       <div className="question--answers">
-        
-        
         {answerButtons}
       </div>
     </div>

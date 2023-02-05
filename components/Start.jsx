@@ -1,14 +1,10 @@
 import React from "react";
 import Footer from "./Footer";
 
-
 function Start(props) {
 
   return (
     <section className="start--main" >
-      <nav>
-
-      </nav>
 
       <div className="start--quiz--container">
 
@@ -32,7 +28,6 @@ function Start(props) {
             >
               <option value={5}>5</option>
               <option value={10}>10</option>
-              {/* <option value={11}>10</option> */}
             </select>
           </div>
 
@@ -76,8 +71,6 @@ function Start(props) {
               <option value="boolean">True or False</option>
             </select>
           </div>
-
-
 
         </div>
 

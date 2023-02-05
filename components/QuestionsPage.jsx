@@ -6,7 +6,7 @@ import ReportCard from "./ReportCard"
 import NoQuestions from './NoQuestions'
 import { nanoid } from "nanoid"
 
-function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns, answerCheckedState, handleStart }) {
+function QuestionsPage({ category, difficulty, questions, answerSelect, answerCheckedState, checkAns, unanswered, handleStart }) {
 
   const [showGradeCard, setShowGradeCard] = React.useState(false)
 
@@ -14,7 +14,12 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
     //Needs better logic
     if (!answerCheckedState) {
       checkAns()
-      setShowGradeCard(!showGradeCard)
+      if (unanswered === false) {
+        
+        setShowGradeCard(!showGradeCard)
+      } else {
+        return
+      }
     } else {
       setShowGradeCard(!showGradeCard)
     }
@@ -74,7 +79,7 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
       <section className="question--main">
         {showGradeCard && <ReportCard
           questions={questions}
-          
+          handleStart={handleStart}
         />}
         <div className="question--container">
           {questions.length > 1 ? questionCard : <NoQuestions />}
@@ -102,7 +107,7 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, checkAns
                 handleShowGrade()
               }}
               >
-              See Score
+              Show Score
             </button>
           </div>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ReportCard({ questions }) {
+function ReportCard({ questions, handleStart }) {
   
   let score = 0;
   let outOf = questions.length
@@ -9,23 +9,30 @@ function ReportCard({ questions }) {
       score++
     }
   }
-  console.log(`You got ${score}/ ${outOf} correct`)
+  // console.log(`You got ${score}/ ${outOf} correct`)
+  let totalScore = (score / outOf) *100
 
+  let goodScoreResponse = ["Wow, Nice Work!", "Genius!", "Impressive!", "Crushed it!", "Excellent!", "You did great!!"]
+  let decentScroreResponse = ["Not bad!", "Passable!", "Decent work!", "Acceptable!", "Pretty good!", "Count it!"]
+  let badScroreResponse = ["Better luck next time!", "Thanks for being here?", "What matters is you tried", "Not great", "Grades don't matter anyways, right?"]
+  
+  let randomResponseIndex = Math.floor(Math.random() * 5)
+  // console.log(randomResponseIndex)
 
-  let responses = {
-    1: "Well, you tried",
-    2: "Well, you tried",
-    3: "Well, you tried",
-    4: "Thanks for being here?"
+  let response;
+  if (totalScore === 100) {
+    response = goodScoreResponse[randomResponseIndex]
+  } else if (totalScore >= 75) {
+    response = decentScroreResponse[randomResponseIndex]
+  } else if (totalScore >= 50) {
+    response = badScroreResponse[randomResponseIndex]
+  } else {
+    response = "Hey, no judgement!"
   }
-
 
   return (
 
     <section className="report--card--main" >
-      <nav>
-
-      </nav>
 
       <div className="report--card--container">
 
@@ -34,21 +41,25 @@ function ReportCard({ questions }) {
           QuizHub!
         </h1>
 
-        <div className="start--selection--main--container">
-          <p className="start--description">
-            You Did bad!
-          </p>
+        <div className="report--card--body">
+          <h3 className="">
+            You Scored: {totalScore}%
+          </h3>
+
+          <h3>
+            {response}
+          </h3>
 
           <div className="start--selection--container">
-            
+            <button
+              className="btn btn--other"
+              onClick={handleStart}
+            >
+              Play Again
+            </button>
           </div>
           
         </div>
-
-        {/* <button className="btn btn--start"
-          onClick={handleStart}>
-          Start Quiz!
-        </button> */}
 
       
       </div>

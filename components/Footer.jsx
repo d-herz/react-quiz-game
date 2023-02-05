@@ -5,6 +5,10 @@ function Footer(props) {
   return (
     <footer className="footer--main">
       <h4 className="footer--text">
+        <i className="fa-brands fa-earlybirds"></i>
+        QuizHub!
+      </h4>
+      <h4 className="footer--text">
         <a href="https://WebDevDan.com">WebDevDan.com</a>
       </h4>
       <p className="footer--text">

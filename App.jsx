@@ -5,8 +5,6 @@ import Start from "./components/Start"
 // import Footer from "./components/Footer"
 import QuestionsPage from "./components/QuestionsPage";
 
-
-
 export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
 
@@ -16,11 +14,11 @@ export default function App() {
   //State array for questions returned from api calls
   const [questions, setQuestions] = React.useState([])
 
-  //State for category and difficulty (reruns fetch)
+  //State for category, difficulty, type, and amount (reruns fetch)
   const [category, setCategory] = React.useState(11)
   const [difficulty, setDifficulty] = React.useState("easy")
   const [type, setType] = React.useState("boolean")
-  const [amount, setAmount] = React.useState(2)
+  const [amount, setAmount] = React.useState(5)
 
   //Fetch to trivia api for questions
   React.useEffect(() => {
@@ -109,13 +107,18 @@ export default function App() {
 
   function checkAns() {
     //Logic to break out of check answer if some questions are not answered
+    let unanswered = false
     for (let i = 0; i < questions.length; i++) {
       if (questions[i].playerChoice === "") {
         alert("You have unanswered questions!")
         console.log("you have unanswered questions")
-        return 
+        unanswered = true
+        console.log(`Unanswered = ${unanswered}`)
+        return unanswered
       }
     }
+    console.log(`Unanswered = ${unanswered}`)
+
     handleAnswerCheck()
 
     // console.log("Answers Checked")
@@ -157,6 +160,7 @@ export default function App() {
             checkAns={checkAns}
             answerCheckedState={answersChecked}
             handleStart={handleStartQuiz}
+            // unanswered={unanswered}
           /> :
           <Start
             handleStart={handleStartQuiz}

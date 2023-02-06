@@ -12,7 +12,7 @@ function ReportCard({ questions, handleStart }) {
   // console.log(`You got ${score}/ ${outOf} correct`)
   let totalScore = (score / outOf) *100
 
-  let goodScoreResponse = ["Wow, Nice Work!", "Genius!", "Impressive!", "Crushed it!", "Excellent!", "You did great!!"]
+  let goodScoreResponse = ["Wow, Nice Work!!", "Genius!!", "Impressive!!", "Crushed it!!", "Excellent!!", "You did great!!"]
   let decentScroreResponse = ["Not bad!", "Passable!", "Decent work!", "Acceptable!", "Pretty good!", "Count it!"]
   let badScroreResponse = ["Better luck next time!", "Thanks for being here?", "What matters is you tried", "Not great", "Grades don't matter anyways, right?"]
   

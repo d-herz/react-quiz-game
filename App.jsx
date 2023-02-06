@@ -1,8 +1,6 @@
 import React from "react";
 import { nanoid } from "nanoid"
 import Start from "./components/Start"
-// import Header from "./components/Header"
-// import Footer from "./components/Footer"
 import QuestionsPage from "./components/QuestionsPage";
 
 export default function App() {

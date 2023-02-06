@@ -47,7 +47,6 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, answerCh
   }
 
   //Mapping Data and creating each question card
-  //nanoID for key
   const questionCard = questions.map((questionObj, ind) => {
     return (
       <QuestionCard

@@ -5,6 +5,8 @@ import AnswerButtons from './AnswerButtons'
 
 function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrect, answersCheckedState, answerCorrect }) {
 
+  //Styles for buttons depending on answerChecked State:
+  //Selection styles (pre-answer check)
   const btnStylesDefault = {
     backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
   }
@@ -16,6 +18,7 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
     fontWeight: "bold",
   }
 
+  //Styles post-answer check
   const btnStylesAnswerCheckCorrect = {
     // backgroundImage: "linear-gradient(#42A1EC, #0070C9)",
     backgroundImage: "linear-gradient(0deg, rgba(34, 126, 34, 1) 30%, rgba(168, 251, 60, 1) 90.3%)",
@@ -109,9 +112,3 @@ function QuestionCard({ playerChoice, answerArr, id, answerSelect, ask, isCorrec
 }
 
 export default QuestionCard
-
-  // < i class="fa-solid fa-xmark" ></i >
-  // < i class="fa-solid fa-check" ></i >
-
-  // < i class="fa-regular fa-circle-xmark" ></i >
-  // < i class="fa-regular fa-circle-check" ></i >

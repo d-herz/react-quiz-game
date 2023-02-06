@@ -17,7 +17,6 @@ function ReportCard({ questions, handleStart }) {
   let badScroreResponse = ["Better luck next time!", "Thanks for being here?", "What matters is you tried", "Not great", "Grades don't matter anyways, right?"]
   
   let randomResponseIndex = Math.floor(Math.random() * 5)
-  // console.log(randomResponseIndex)
 
   let response;
   if (totalScore === 100) {
@@ -67,6 +66,5 @@ function ReportCard({ questions, handleStart }) {
     </section>
   )
 }
-
 
 export default ReportCard

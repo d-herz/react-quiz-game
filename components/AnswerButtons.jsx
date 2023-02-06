@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid'
 import React from 'react'
 
 function AnswerButton({ id, value, answerSelect, styles}) {

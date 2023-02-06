@@ -27,16 +27,14 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, answerCh
 
   //Attaching name to category:
   let categoryName;
-  if (category === 15) {
+  if (category === "15" || category === 15) {
     categoryName = "Video Games"
-  } else if (category === 9) {
-    categoryName = "General Knowledge"
-  } else if (category === 11) {
+  } else if (category === "9" || category === 9) {
+    categoryName = "General"
+  } else if (category === "11" || category === 11) {
     categoryName = "Films"
-  } else if (category === 9) {
-    categoryName = "General Knowledge"
-  } else if (category === 9) {
-    categoryName = "General Knowledge"
+  } else {
+    categoryName = "Wtf"
   }
 
   let difficultyName = ''
@@ -46,7 +44,6 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, answerCh
     difficultyName = "Medium"
   } else if (difficulty === "hard") {
     difficultyName = "Hard"
-
   }
 
   //Mapping Data and creating each question card
@@ -72,8 +69,8 @@ function QuestionsPage({ category, difficulty, questions, answerSelect, answerCh
       <Header />
 
       <div className="question--info">
-        <span>Category:{categoryName}</span>
-        <span>Difficulty:{difficultyName}</span>
+        <h3>Category: {categoryName} </h3>
+        <h3>Difficulty: {difficultyName} </h3>
       </div>
 
       <section className="question--main">

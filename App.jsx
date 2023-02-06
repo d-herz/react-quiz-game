@@ -8,13 +8,13 @@ import QuestionsPage from "./components/QuestionsPage";
 export default function App() {
   const [gameStart, setGameStart] = React.useState(false)
 
-  //State for tracking if answers are checked and changing styles
+  //Answers Checked State: Changes button styles
   const [answersChecked, setAnswersChecked] = React.useState(false)
 
-  //State array for questions returned from api calls
+  //Questions state array: returned from api calls
   const [questions, setQuestions] = React.useState([])
 
-  //State for category, difficulty, type, and amount (reruns fetch)
+  //States for category, difficulty, type, and amount (reruns fetch)
   const [category, setCategory] = React.useState(11)
   const [difficulty, setDifficulty] = React.useState("easy")
   const [type, setType] = React.useState("boolean")
@@ -25,11 +25,11 @@ export default function App() {
     async function getQuestions() {
 
       const res = await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}&encode=base64`)
-      // const res = await fetch(`https://opentdb.com/api.php?amount=3&encode=base64`)
+    
       const data = await res.json()
 
       const cleanedData = await data.results.map(obj => {
-        //Get and clean all answers, store in a reverse sorted array:
+        //Get and clean all answers, store in array:
         let quesAnswers = []
         //ternary because if multi choice, needs to map over array of incorrect answers
         let cleanWrongAnswers = obj.incorrect_answers.length > 1 ? obj.incorrect_answers.map(x => atob(x)) : [atob(obj.incorrect_answers)];
@@ -41,7 +41,6 @@ export default function App() {
           id: nanoid(),
           question: atob(obj.question),
           answerCorrect: cleanRightAnswer,
-          // answerIncorrect: [atob(obj.incorrect_answers)],
           playerChoice: "",
           isCorrect: "No",
           answerArray: quesAnswers,
@@ -50,7 +49,6 @@ export default function App() {
 
       setQuestions(cleanedData)
     }
-    // console.log(questions)
     getQuestions()
   }, [amount, category, difficulty, type])
 
@@ -60,21 +58,21 @@ export default function App() {
     setAnswersChecked(false)
     setGameStart(!gameStart)
   }
-  //handlers for category and difficulty 
+  //handlers for category, difficulty etc
   function handleCategoryChange(event) {
     console.log(event.target.value)
     setCategory(event.target.value)
   }
   function handleDifficultyChange(event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setDifficulty(event.target.value)
   }
   function handleTypeChange(event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setType(event.target.value)
   }
   function handleSetAmount(event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     setAmount(event.target.value)
   }
 
@@ -97,13 +95,12 @@ export default function App() {
     // console.log(id)
     setAnswersChecked(false)
   }  
-  console.log(questions)
+  // console.log(questions)
 
   //Check Answers State Handler Function
   function handleAnswerCheck() {
     setAnswersChecked(!answersChecked)
   }
-  // console.log(answersChecked)
 
   function checkAns() {
     //Logic to break out of check answer if some questions are not answered
@@ -111,13 +108,13 @@ export default function App() {
     for (let i = 0; i < questions.length; i++) {
       if (questions[i].playerChoice === "") {
         alert("You have unanswered questions!")
-        console.log("you have unanswered questions")
+        // console.log("you have unanswered questions")
         unanswered = true
-        console.log(`Unanswered = ${unanswered}`)
+        // console.log(`Unanswered = ${unanswered}`)
         return unanswered
       }
     }
-    console.log(`Unanswered = ${unanswered}`)
+    // console.log(`Unanswered = ${unanswered}`)
 
     handleAnswerCheck()
 
@@ -140,12 +137,12 @@ export default function App() {
       }
     }
 
-    if (playerAnswers.every((val, idx) => val === correctAnswers[idx])) {
-      console.log("All Correct")
-      console.log("Great Job!!")
-    } else {
-      console.log("you made mistakes")
-    }
+    // if (playerAnswers.every((val, idx) => val === correctAnswers[idx])) {
+    //   console.log("All Correct")
+    //   console.log("Great Job!!")
+    // } else {
+    //   console.log("you made mistakes")
+    // }
   }
 
   return (

@@ -1,12 +1,8 @@
-# react-quiz-game
-Prototype React Quiz Game
-
-
 <h1 align="center"> Quiz Hub! </h1>
+<h3 align="center"> <a href="https://d-herz.github.io/react-quiz-game/">Test your knowledge!</a></h3>
 
-<h3 align="center"> Built with React.js</h3>
+<h4 align="center"> Built with React.js</h4>
 
-<h3 align="center"> <a href="https://d-herz.github.io/react-quiz-game/">Play a round!</a></h3>
 
 <h3 align="left">About this project:</h3>
 <p align="left">

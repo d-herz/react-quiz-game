@@ -101,6 +101,10 @@ body {
   display: flex;
   justify-content: center;
 }
+.question--info h3{
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
 
 .question--main {
   display: flex;

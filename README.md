@@ -30,16 +30,16 @@ Future optimizations being considered include additional quiz options and featur
 <h3 align="left">Screenshot:</h3>
 
 <p align="center">
-  <img src="https://github.com/d-herz/react-quiz-game/blob/main/start-quiz.png" alt="screenshot" />
+  <img src="https://github.com/d-herz/react-quiz-game/blob/main/screen-shots/start-quiz.png" alt="screenshot" width= "375" height="auto" />
 </p>
 <p align="center">
-  <img src="https://github.com/d-herz/react-quiz-game/blob/main/answer-select.png" alt="screenshot" />
+  <img src="https://github.com/d-herz/react-quiz-game/blob/main/screen-shots/answer-select.png" alt="screenshot" width= "375" height="auto" />
 </p>
 <p align="center">
-  <img src="https://github.com/d-herz/react-quiz-game/blob/main/answer-check.png" alt="screenshot" />
+  <img src="https://github.com/d-herz/react-quiz-game/blob/main/screen-shots/answer-check.png" alt="screenshot" width= "375" height="auto" />
 </p>
 <p align="center">
-  <img src="https://github.com/d-herz/react-quiz-game/blob/main/scoreCard.png" alt="screenshot" />
+  <img src="https://github.com/d-herz/react-quiz-game/blob/main/screen-shots/scoreCard.png" alt="screenshot" width= "375" height="auto" />
 </p>
 
 <!-- <p align="center">

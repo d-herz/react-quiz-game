@@ -1,5 +1,5 @@
-<h1 align="center"> Quiz Hub! </h1>
-<h3 align="center"> <a href="https://d-herz.github.io/react-quiz-game/">Test your knowledge!</a></h3>
+<h1 align="center"><a href="https://d-herz.github.io/react-quiz-game/">Quiz Hub!</a> </h1>
+<h3 align="center">Test your knowledge!</h3>
 
 <h4 align="center"> Built with React.js</h4>
 

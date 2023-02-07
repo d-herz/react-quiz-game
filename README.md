@@ -6,7 +6,10 @@
 
 <h3 align="left">About this project:</h3>
 <p align="left">
-Welcome to "QuizHub!", a customizable triva game. This fun app was created with React and pulls trivia questions based on user specified settings from the Open Trivia API. The app was built from the ground up using core React.js, JSX, and custom CSS. The app contains and utilizes custom React components with props, state and side effect hooks, conditional rendering, and user-input forms. The user can customize the amount of questions, the question category (Films, General, or Video Games), and question type (True/False or multiple choice). Each user selection is stored in a variable and inserted into the fetch request for a dynamic and replayable experience. 
+Welcome to "QuizHub!", the customizable trivia app!
+</p>
+<p alight="left">
+ This fun app was created with React and pulls trivia questions based on user specified settings from the Open Trivia API. The app was built from the ground up using core React.js, JSX, and custom CSS. The app contains and utilizes custom React components with props, state and side effect hooks, conditional rendering, and user-input forms. The user can customize the amount of questions, the question category (Films, General, or Video Games), and question type (True/False or multiple choice). Each user selection is stored in a variable and inserted into the fetch request for a dynamic and replayable experience. 
 </p>
 
 <p align="left" >
@@ -22,6 +25,21 @@ Future optimizations being considered include additional quiz options and featur
 <li>Deployed and Hosted with GitHub Pages</li>
 <li>Awesome buttons! (I spent to much time on the buttons, please appreciate them) </li> 
 </ul>
+</p>
+
+<h3 align="left">Screenshot:</h3>
+
+<p align="center">
+  <img src="https://github.com/d-herz/react-quiz-game/blob/main/start-quiz.png" alt="screenshot" />
+</p>
+<p align="center">
+  <img src="https://github.com/d-herz/react-quiz-game/blob/main/answer-select.png" alt="screenshot" />
+</p>
+<p align="center">
+  <img src="https://github.com/d-herz/react-quiz-game/blob/main/answer-check.png" alt="screenshot" />
+</p>
+<p align="center">
+  <img src="https://github.com/d-herz/react-quiz-game/blob/main/scoreCard.png" alt="screenshot" />
 </p>
 
 <!-- <p align="center">

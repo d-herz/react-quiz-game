@@ -27,7 +27,7 @@ Future optimizations being considered include additional quiz options and featur
 </ul>
 </p>
 
-<h3 align="left">Screenshot:</h3>
+<h3 align="left">Screenshots:</h3>
 
 <p align="center">
   <img src="https://github.com/d-herz/react-quiz-game/blob/main/screen-shots/start-quiz.png" alt="screenshot" width= "350" height="auto" />

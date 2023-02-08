@@ -42,11 +42,6 @@ Future optimizations being considered include additional quiz options and featur
   <img src="https://github.com/d-herz/react-quiz-game/blob/main/screen-shots/scoreCard.png" alt="screenshot" width= "350" height="auto" />
 </p>
 
-<!-- <p align="center">
-  <img src="https://github.com/d-herz/breaking-bad-quotes-client/blob/main/bb-readme.gif" alt="animated" />
-</p> -->
-
-
 
 <h3 align="left">Languages and Tools Used to Create this Project:</h3>
 <p align="left"> 
